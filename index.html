@@ -545,25 +545,36 @@ img{display:block;max-width:100%;}
   margin:1rem 0 1.8rem;
 }
 .flavor-tag{
-  font-size:.82rem;
-  color:var(--cream-dim);
-  border-bottom:1px solid var(--line-soft);
-  padding:.5rem 0;
-  line-height:1.5;
   display:flex;
-  align-items:flex-start;
-  gap:.55rem;
-  transition:color .3s var(--ease-out), border-color .3s var(--ease-out);
+  align-items:center;
+  gap:.7rem;
+
+  padding:.95rem 0;
+
+  font-size:1rem;
+  font-weight:400;
+  color:var(--cream);
+
+  border-bottom:1px solid var(--line-soft);
+
+  transition:
+    color .3s var(--ease-out),
+    border-color .3s var(--ease-out);
+}
+
+.flavor-tag:hover{
+  color:var(--gold-soft);
 }
 .flavor-tag::before{
   content:'';
-  width:6px;
-  height:6px;
+  width:7px;
+  height:7px;
+  flex:0 0 7px;
+
   border-radius:50%;
-  margin-top:.45rem;
-  flex:0 0 6px;
   background:var(--gold);
-  opacity:.8;
+
+  opacity:.9;
 }
 
 .price-schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
@@ -1112,9 +1123,9 @@ img{display:block;max-width:100%;}
         <div class="menu-block-head rv">
           <div class="menu-cat-num">06</div>
           <h3 class="menu-cat-title">Signature Salad</h3>
-          <p class="menu-cat-desc rv">
-            Includes two accompaniments. Additional accompaniment €3.00.
-          </p>
+          <p class="menu-cat-note rv">
+          Includes any two accompaniments. Additional accompaniments +€3 each.
+        </p>
         </div>
         <div class="price-schedule rv">
           <div class="price-block"><div class="price-block-label">Weekdays</div><div class="price-block-val">€14.00</div><div class="price-block-time">10:30 – 14:00</div></div>
