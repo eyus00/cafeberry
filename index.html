@@ -55,7 +55,7 @@
          }
          *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
          html{scroll-behavior:smooth;scroll-padding-top:80px;}
-         body{background:var(--espresso);color:var(--cream);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;}
+         body{background:var(--espresso);color:var(--cream);font-family:var(--sans);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-webkit-touch-callout:none;}
          ::selection{background:var(--gold);color:var(--espresso);}
          ::-webkit-scrollbar{width:5px;}
          ::-webkit-scrollbar-track{background:var(--espresso);}
@@ -108,7 +108,7 @@
          .close-icon{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s var(--ease);}
          .menu-toggle.active .close-icon{display:block;opacity:1;}
          .mobile-nav-links a:focus-visible{outline:1px solid var(--gold);outline-offset:6px;border-radius:4px;}
-         .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(21,15,11,.99);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s var(--ease);}
+         .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(21,15,11,.99);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:999;align-items:center;justify-content:center;opacity:0;transition:opacity .3s var(--ease);overscroll-behavior:contain;}
          .mobile-overlay.active{display:flex;opacity:1;}
          .mobile-nav-links{list-style:none;text-align:center;display:flex;flex-direction:column;gap:2.2rem;margin:0;padding:0;}
          .mobile-nav-links a{font-family:var(--serif);font-size:1.8rem;font-weight:400;font-style:italic;color:var(--cream);opacity:0;transform:translateY(20px);transition:all .4s var(--ease);text-decoration:none;}
@@ -175,7 +175,7 @@
          .lightbox.open{display:flex;opacity:1;}
          .lightbox-stage{position:relative;max-width:min(1200px,92vw);max-height:88vh;display:flex;align-items:center;justify-content:center;}
          .lightbox-stage img{max-width:100%;max-height:88vh;object-fit:contain;border-radius:8px;box-shadow:0 30px 80px rgba(0,0,0,.6);}
-         .lightbox-close{position:absolute;top:16px;right:16px;background:rgba(21,15,11,.6);border:1px solid var(--line);color:var(--cream);cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:4px;transition:all .3s var(--ease-out);}
+         .lightbox-close{position:absolute;top:16px;right:16px;background:rgba(21,15,11,.6);border:1px solid var(--line);color:var(--cream);cursor:pointer;width:36px;height:36px;display:flex;align-items:center;justify-content:center;border-radius:50%;transition:all .3s var(--ease-out);}
          .lightbox-close::before,.lightbox-close::after{content:'';position:absolute;width:16px;height:2px;border-radius:1px;background:currentColor;top:50%;left:50%;transform-origin:center;}
          .lightbox-close::before{transform:translate(-50%,-50%) rotate(45deg);}
          .lightbox-close::after{transform:translate(-50%,-50%) rotate(-45deg);}
@@ -232,10 +232,10 @@
          .m-item{display:flex;justify-content:space-between;align-items:stretch;gap:1rem;padding:.85rem .15rem;min-height:4.85rem;border-bottom:1px solid var(--line-soft);}
          .m-item:last-child{border-bottom:none;}
          .m-item-left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:.18rem;}
-         .m-item-top{display:flex;align-items:center;gap:.6rem;flex-wrap:wrap;}
+         .m-item-top{display:flex;align-items:center;gap:.6rem;flex-wrap:nowrap;}
          .m-item-name{font-size:1.02rem;font-weight:500;color:var(--cream);}
          .m-item-desc{font-size:.82rem;font-style:italic;color:var(--cream-dim);font-weight:300;display:block;line-height:1.45;}
-         .m-tags{display:inline-flex;gap:.35rem;align-items:center;flex-shrink:0;}
+         .m-tags{display:inline-flex;gap:.35rem;align-items:center;flex-shrink:0;white-space:nowrap;margin-left:.4rem;}
          .tag-dot{width:6px;height:6px;border-radius:50%;display:inline-block;}
          .m-item-price{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--gold-soft);white-space:nowrap;margin-left:1rem;align-self:center;flex-shrink:0;}
          .m-item-prices{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;min-width:120px;flex-shrink:0;align-self:center;}
@@ -296,6 +296,11 @@
          .visit-block-text{font-size:.98rem;font-weight:300;color:var(--cream-dim);line-height:1.85;font-style:italic;}
          .visit-block-text a{color:inherit;transition:color .3s ease;}
          .visit-block-text a:hover{color:var(--gold);}
+         .visit-concept-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--cream);line-height:1.2;margin-bottom:2.4rem;}
+         .visit-values{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:0;}
+         .visit-value{display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:1.6rem 1.4rem;}
+         .visit-value-accent{width:2px;height:32px;background:linear-gradient(180deg,var(--gold) 0%,rgba(199,160,89,0) 100%);}
+         .visit-value p{font-size:.95rem;color:var(--cream-dim);line-height:1.7;font-weight:300;}
          .newsletter{padding:5rem 3.2rem;background:var(--espresso-mid);border-bottom:1px solid var(--line-soft);}
          .newsletter-inner{max-width:540px;margin:0 auto;text-align:center;}
          .newsletter-title{font-family:var(--serif);font-size:1.7rem;font-weight:300;margin-bottom:.7rem;}
@@ -310,16 +315,17 @@
          .newsletter-form button{padding:.9rem 1.7rem;background:var(--gold);border:1px solid var(--gold);color:var(--espresso);font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .4s var(--ease-out);}
          .newsletter-form button:hover{background:var(--gold-soft);border-color:var(--gold-soft);box-shadow:0 8px 22px -8px rgba(199,160,89,.5);}
          .footer{padding:4.5rem 3.2rem 2rem;}
-         .footer-top{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:3rem;border-bottom:1px solid var(--line-soft);flex-wrap:wrap;gap:2.5rem;}
-         .footer-brand{max-width:340px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 1 100%;}
+         .footer-top{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:3rem;border-bottom:1px solid var(--line-soft);flex-wrap:nowrap;gap:4rem;}
+         .footer-brand{max-width:340px;display:flex;flex-direction:column;align-items:center;text-align:center;flex:0 0 auto;}
          .footer-brand-logo{display:block;height:48px;margin-bottom:.65rem;}
          .footer-brand-tag{font-size:.6rem;font-weight:600;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;line-height:1.5;}
          .footer-social{display:flex;gap:.7rem;margin-top:1.6rem;justify-content:center;}
          .footer-social a{width:36px;height:36px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--cream-dim);transition:all .3s ease;}
          .footer-social a:hover{border-color:var(--gold);color:var(--gold);}
          .footer-social svg{width:14px;height:14px;color:currentColor;}
-         .footer-links-group{display:flex;gap:4.5rem;flex:1;}
-         .footer-col h4{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;}
+         .footer-links-group{display:flex;gap:4.5rem;flex:1;justify-content:flex-end;}
+         .footer-col{display:flex;flex-direction:column;}
+         .footer-col h4{font-size:.68rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);margin-bottom:1.3rem;text-align:left;}
          .footer-col ul{list-style:none;margin:0;padding:0;}
          .footer-col ul li{margin-bottom:.55rem;}
          .footer-col ul a{font-size:.92rem;font-weight:300;color:var(--cream-dim);font-style:italic;transition:color .3s ease;}
@@ -342,7 +348,7 @@
          .gallery-stage{padding:0 4rem;}
          .menu-layout{grid-template-columns:1fr;}
          .menu-rail{display:none;}
-         .menu-rail-mobile{display:flex;position:sticky;top:64px;z-index:50;background:rgba(21,15,11,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow-x:auto;gap:.5rem;padding:.85rem 3.2rem;margin:0 -3.2rem 2.5rem;border-bottom:1px solid var(--line-soft);border-top:1px solid var(--line-soft);scrollbar-width:none;}
+         .menu-rail-mobile{display:flex;position:sticky;top:64px;z-index:50;background:rgba(21,15,11,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);overflow-x:auto;gap:.5rem;padding:.85rem 3.2rem;margin:0 -3.2rem 2.5rem;border-bottom:1px solid var(--line-soft);border-top:1px solid var(--line-soft);scrollbar-width:none;overscroll-behavior:contain;}
          .menu-rail-mobile::-webkit-scrollbar{display:none;}
          .menu-rail-mobile a{flex:0 0 auto;min-height:38px;display:inline-flex;align-items:center;font-size:.78rem;font-weight:500;color:var(--cream-dim);padding:.55rem 1.1rem;border:1px solid var(--line);white-space:nowrap;transition:color .3s ease,border-color .3s ease;}
          .menu-rail-mobile a.active{color:var(--gold-soft);border-color:var(--gold);}
@@ -417,6 +423,10 @@
          .visit{padding:5rem 1.25rem;}
          .visit .section-title{font-size:clamp(1.7rem,7vw,2.4rem);}
          .visit-intro{font-size:.92rem;}
+         .visit-concept-title{font-size:clamp(1.35rem,5vw,1.8rem);margin-bottom:1.8rem;}
+         .visit-values{grid-template-columns:1fr;gap:1.4rem;margin-top:0;}
+         .visit-value{padding:1.2rem .8rem;}
+         .visit-value p{font-size:.9rem;}
          .visit-details{grid-template-columns:1fr;gap:1rem;margin-top:2.2rem;}
          .visit-block{padding:1.8rem 1.2rem;}
          .visit-icon svg{width:22px;height:22px;}
@@ -742,7 +752,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Pistachio Pastry<span class="m-tags"><span class="tag-dot dot-gf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Pistachio Pastry</span><span class="m-tags"><span class="tag-dot dot-gf"></span></span></div>
                               <div class="m-item-desc">Contains pistachios</div>
                            </div>
                         </div>
@@ -799,7 +809,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Avocado &amp; Poached Egg Bread<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Avocado &amp; Poached Egg Bread</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Sourdough, perfectly poached egg</div>
                            </div>
                         </div>
@@ -808,7 +818,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Avocado Burrata Bread<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Avocado Burrata Bread</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Creamy burrata, smashed avocado</div>
                            </div>
                         </div>
@@ -817,7 +827,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Tomato Mozzarella Bread<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Tomato Mozzarella Bread</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Heirloom tomato, basil pesto</div>
                            </div>
                         </div>
@@ -826,14 +836,14 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Cold-Smoked Salmon Bread<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Cold-Smoked Salmon Bread</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Cured salmon, dill crème fraîche</div>
                            </div>
                         </div>
                         <span class="m-item-price">€16.50</span>
                      </div>
                      <div class="m-item">
-                        <div class="m-item-left"><span class="m-item-name">Skagen Archipelago Bread<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span><span class="m-item-desc">Shrimp, dill, lemon · Gluten-free option available</span></div>
+                        <div class="m-item-left"><div class="m-item-top"><span class="m-item-name">Skagen Archipelago Bread</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div><span class="m-item-desc">Shrimp, dill, lemon · Gluten-free option available</span></div>
                         <span class="m-item-price">€18.90</span>
                      </div>
                   </div>
@@ -842,7 +852,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Warm-Smoked Salmon Focaccia<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Warm-Smoked Salmon Focaccia</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Dill, lemon</div>
                            </div>
                         </div>
@@ -851,7 +861,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Tomato Mozzarella Pesto Focaccia<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Tomato Mozzarella Pesto Focaccia</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Basil pesto, cherry tomatoes</div>
                            </div>
                         </div>
@@ -860,8 +870,8 @@
                   </div>
                   <div class="menu-subhead rv">Filled Croissants</div>
                   <div class="rv">
-                     <div class="m-item"><span class="m-item-name">Ham &amp; Cheese<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span><span class="m-item-price">€10.50</span></div>
-                     <div class="m-item"><span class="m-item-name">Mettwurst &amp; Cheese<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span><span class="m-item-price">€10.50</span></div>
+                     <div class="m-item"><div class="m-item-left"><div class="m-item-top"><span class="m-item-name">Ham &amp; Cheese</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div></div><span class="m-item-price">€10.50</span></div>
+                     <div class="m-item"><div class="m-item-left"><div class="m-item-top"><span class="m-item-name">Mettwurst &amp; Cheese</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div></div><span class="m-item-price">€10.50</span></div>
                   </div>
                </div>
                <!-- 04 SWEET BAKERY -->
@@ -875,7 +885,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Pastel de Nata<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Pastel de Nata</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Crisp pastry, creamy custard</div>
                            </div>
                         </div>
@@ -884,7 +894,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Cinnamon Bun<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Cinnamon Bun</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Sticky, warmly spiced</div>
                            </div>
                         </div>
@@ -893,7 +903,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Butter Eye Bun<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Butter Eye Bun</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Buttery, lightly glazed</div>
                            </div>
                         </div>
@@ -902,7 +912,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Danish Pastry<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Danish Pastry</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Fruit-filled, flaky</div>
                            </div>
                         </div>
@@ -911,7 +921,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Vanilla Swirl Bun<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Vanilla Swirl Bun</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Soft, vanilla-scented</div>
                            </div>
                         </div>
@@ -920,7 +930,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Croissant<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Croissant</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Classic butter croissant</div>
                            </div>
                         </div>
@@ -929,7 +939,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Filled Croissant<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Filled Croissant</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Seasonal fillings</div>
                            </div>
                         </div>
@@ -938,7 +948,7 @@
                      <div class="m-item">
                         <div class="m-item-left">
                            <div>
-                              <div class="m-item-top"><span class="m-item-name">Mango, Strawberry &amp; Chocolate Filled Croissant<span class="m-tags"><span class="tag-dot dot-lf"></span></span></span></div>
+                              <div class="m-item-top"><span class="m-item-name">Mango, Strawberry &amp; Chocolate Filled Croissant</span><span class="m-tags"><span class="tag-dot dot-lf"></span></span></div>
                               <div class="m-item-desc">Three fillings, nut-free</div>
                            </div>
                         </div>
@@ -2075,12 +2085,21 @@
          <div class="eyebrow center rv">Visit</div>
          <h2 class="section-title rv rv2">Come find your <em>favorite seat</em></h2>
          <div class="visit-intro rv">
-            <p style="font-weight:600;margin-bottom:1.2rem;">Laptop-Free Café</p>
-            <ul style="list-style:disc;padding-left:1.8rem;margin:0;display:flex;flex-direction:column;gap:.6rem;font-size:.98rem;font-weight:300;color:var(--cream-dim);line-height:1.85;">
-               <li>We aim to enrich Finnish café culture by offering a calm and inviting space</li>
-               <li>Every guest can enjoy a seat</li>
-               <li>We do not accept table reservations</li>
-            </ul>
+            <h3 class="visit-concept-title">A Space for Presence</h3>
+            <div class="visit-values">
+               <div class="visit-value">
+                  <div class="visit-value-accent"></div>
+                  <p>A laptop-free café dedicated to presence, conversation, and connection</p>
+               </div>
+               <div class="visit-value">
+                  <div class="visit-value-accent"></div>
+                  <p>A calm and inviting space to enrich Finnish café culture</p>
+               </div>
+               <div class="visit-value">
+                  <div class="visit-value-accent"></div>
+                  <p>Walk in anytime — no reservations needed, just find your seat</p>
+               </div>
+            </div>
          </div>
          <div class="visit-details">
             <div class="visit-block rv">
@@ -2183,6 +2202,7 @@
          
            const menuToggle = document.getElementById('menuToggle');
            const mobileOverlay = document.getElementById('mobileOverlay');
+           let touchStartX = 0;
            function setMobile(open){
              menuToggle.classList.toggle('active', open);
              mobileOverlay.classList.toggle('active', open);
@@ -2199,6 +2219,15 @@
            document.addEventListener('keydown', (e) => {
              if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) setMobile(false);
            });
+           mobileOverlay.addEventListener('touchstart', (e) => {
+             touchStartX = e.touches[0].clientX;
+           }, false);
+           mobileOverlay.addEventListener('touchend', (e) => {
+             const touchEndX = e.changedTouches[0].clientX;
+             if (touchStartX - touchEndX > 50) {
+               setMobile(false);
+             }
+           }, false);
          
            const reveals = document.querySelectorAll('.rv');
            const io = new IntersectionObserver((entries) => {
@@ -2230,11 +2259,9 @@
                  const rail = document.getElementById('railMobile');
                  const rect = l.getBoundingClientRect();
                  const railRect = rail.getBoundingClientRect();
-                 if (rect.right > railRect.right) {
-                   rail.scrollLeft += rect.right - railRect.right + 10;
-                 } else if (rect.left < railRect.left) {
-                   rail.scrollLeft += rect.left - railRect.left - 10;
-                 }
+                 const centerOffset = (railRect.width - rect.width) / 2;
+                 const targetScroll = l.offsetLeft - centerOffset;
+                 rail.scrollTo({left: Math.max(0, Math.min(targetScroll, rail.scrollWidth - rail.clientWidth)), behavior: 'smooth'});
                }
              });
              const activeLink = document.querySelector('.rail-link.active');
