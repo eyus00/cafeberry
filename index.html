@@ -357,11 +357,12 @@
          .gallery-stage{padding:0 4rem;}
          .menu-layout{grid-template-columns:1fr;}
          .menu-rail{display:none;}
-         .menu-rail-clip{overflow:hidden;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
-         .menu-rail-mobile{display:flex;position:sticky;top:64px;z-index:50;background:rgba(21,15,11,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);gap:.5rem;padding:.85rem 1.25rem;scrollbar-width:none;overflow-x:auto;}
-         .menu-rail-mobile::-webkit-scrollbar{display:none;}
-         .menu-rail-mobile a{flex:0 0 auto;min-height:38px;display:inline-flex;align-items:center;font-size:.78rem;font-weight:500;color:var(--cream-dim);padding:.55rem 1.1rem;border:1px solid var(--line);white-space:nowrap;transition:color .3s ease,border-color .3s ease;}
-         .menu-rail-mobile a.active{color:var(--gold-soft);border-color:var(--gold);}
+         .menu-rail-mobile{display:block;position:sticky;top:64px;z-index:50;background:rgba(21,15,11,.94);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);}
+         .menu-rail-clip{overflow-x:hidden;overflow-y:visible;border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);}
+         .menu-rail-track{display:flex;gap:.5rem;padding:.85rem 1.25rem;overflow-x:auto;overflow-y:hidden;scrollbar-width:none;overscroll-behavior:contain;-webkit-overflow-scrolling:touch;}
+         .menu-rail-track::-webkit-scrollbar{display:none;height:0;}
+         .menu-rail-clip a{flex:0 0 auto;min-height:38px;display:inline-flex;align-items:center;font-size:.78rem;font-weight:500;color:var(--cream-dim);padding:.55rem 1.1rem;border:1px solid var(--line);white-space:nowrap;transition:color .3s ease,border-color .3s ease;}
+         .menu-rail-clip a.active{color:var(--gold-soft);border-color:var(--gold);}
          .featured-wine{grid-template-columns:1fr;}
          .featured-wine-art{order:-1;padding:2rem;}
          .m-item-prices{min-width:100px;}
@@ -399,8 +400,9 @@
          .full-menu-head .section-title{font-size:clamp(1.8rem,7vw,2.4rem);}
          .full-menu-head .section-sub{font-size:.92rem;}
          .menu-legend{gap:1.1rem;font-size:.7rem;margin-top:1.2rem;}
-         .menu-rail-mobile{top:60px;padding:.8rem 1.25rem;margin:0 0 1.8rem;gap:.4rem;}
-         .menu-rail-mobile a{font-size:.7rem;padding:.55rem .95rem;min-height:36px;}
+         .menu-rail-mobile{top:60px;}
+         .menu-rail-track{padding:.8rem 1.25rem;margin:0 0 1.8rem;gap:.4rem;}
+         .menu-rail-clip a{font-size:.7rem;padding:.55rem .95rem;min-height:36px;}
          .menu-layout{padding:0 1.25rem;gap:0;}
          .menu-block{padding-bottom:3rem;margin-bottom:3rem;scroll-margin-top:80px;}
          .menu-block-head{margin-bottom:1.6rem;}
@@ -604,16 +606,18 @@
                <div class="legend-item"><span class="legend-dot dot-vg"></span>Vegan</div>
             </div>
          </div>
-         <div class="menu-rail-clip">
-            <nav class="menu-rail-mobile" id="railMobile">
-               <a href="#breakfast">Breakfast</a><a href="#pastries">Pastries</a><a href="#savory">Savory</a>
-               <a href="#sweet">Sweet Bakery</a><a href="#soup">Soup</a><a href="#salads">Salads</a>
-               <a href="#coffee">Coffee</a><a href="#iced">Iced</a><a href="#flavoured">Lattes</a>
-               <a href="#juices">Juices</a><a href="#tea">Tea</a><a href="#softdrinks">Soft Drinks</a>
-               <a href="#wines">Wines</a><a href="#beer">Beer &amp; Cider</a><a href="#nonalcoholic">Non-Alcoholic</a><a href="#cocktails">Cocktails</a>
-               <a href="#spirits">Spirits</a><a href="#snacks">Snacks</a><a href="#gelato">Gelato</a>
-            </nav>
-         </div>
+         <nav class="menu-rail-mobile" id="railMobile">
+            <div class="menu-rail-clip">
+               <div class="menu-rail-track">
+                  <a href="#breakfast">Breakfast</a><a href="#pastries">Pastries</a><a href="#savory">Savory</a>
+                  <a href="#sweet">Sweet Bakery</a><a href="#soup">Soup</a><a href="#salads">Salads</a>
+                  <a href="#coffee">Coffee</a><a href="#iced">Iced</a><a href="#flavoured">Lattes</a>
+                  <a href="#juices">Juices</a><a href="#tea">Tea</a><a href="#softdrinks">Soft Drinks</a>
+                  <a href="#wines">Wines</a><a href="#beer">Beer &amp; Cider</a><a href="#nonalcoholic">Non-Alcoholic</a><a href="#cocktails">Cocktails</a>
+                  <a href="#spirits">Spirits</a><a href="#snacks">Snacks</a><a href="#gelato">Gelato</a>
+               </div>
+            </div>
+         </nav>
          <div class="menu-layout">
             <nav class="menu-rail" id="rail">
                <div class="rail-indicator" id="railIndicator"></div>
