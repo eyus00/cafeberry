@@ -33,6 +33,8 @@
       <link rel="icon" type="image/svg+xml" href="/media/favicon/favicon.svg" />
       <link rel="shortcut icon" href="/media/favicon/favicon.ico" />
       <link rel="apple-touch-icon" sizes="180x180" href="/media/favicon/apple-touch-icon.png" />
+      <meta name="apple-mobile-web-app-capable" content="yes" />
+      <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
       <meta name="apple-mobile-web-app-title" content="Café Berry" />
       <link rel="manifest" href="/site.webmanifest" />
       <style>
@@ -97,8 +99,7 @@
          .nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:1.4rem 3.2rem;display:grid;grid-template-columns:1fr auto auto;align-items:center;column-gap:1.4rem;transition:all .5s var(--ease);}
          .nav.scrolled{background:rgba(21,15,11,.86);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:.75rem 3.2rem;border-bottom:1px solid var(--line-soft);}
          .brand{display:flex;align-items:center;gap:.7rem;justify-self:start;text-decoration:none;}
-         .brand img{height:40px;display:block;transition:transform .5s var(--ease);}
-         .brand:hover img{transform:rotate(-3deg) scale(1.04);}
+         .brand img{height:40px;display:block;}
          .nav-links{display:flex;list-style:none;gap:2.6rem;align-items:center;justify-self:end;margin:0;padding:0;}
          .nav-right{justify-self:end;display:flex;align-items:center;gap:.9rem;}
          .nav-links a{font-size:.85rem;font-weight:500;letter-spacing:.04em;color:var(--cream-dim);position:relative;padding-bottom:3px;transition:color .3s ease;}
@@ -542,8 +543,8 @@
       </section>
       <div class="ticker" aria-hidden="true">
          <div class="ticker-track">
-            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span>
-            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span>
+            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span><span>Chocolate Tart</span><span>Berry Pavlova</span><span>Matcha Latte</span><span>Nordic Sourdough</span>
+            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span><span>Chocolate Tart</span><span>Berry Pavlova</span><span>Matcha Latte</span><span>Nordic Sourdough</span>
          </div>
       </div>
       <section class="gallery" id="gallery">
@@ -581,7 +582,7 @@
                   <path d="M9 6l6 6-6 6"/>
                </svg>
             </button>
-            <div class="lightbox-counter" aria-live="polite"><span id="lightboxCounter">1 / 12</span></div>
+            <div class="lightbox-counter" aria-live="polite"><span id="lightboxCounter">1 / 18</span></div>
          </div>
       </section>
       <section class="interlude">
@@ -2178,7 +2179,7 @@
                <div class="footer-col">
                   <h4>Explore</h4>
                   <ul>
-                     <li><a href="#gallery">Bakery</a></li>
+                     <li><a href="#gallery">Gallery</a></li>
                      <li><a href="#menu">Menu</a></li>
                      <li><a href="#visit">Visit</a></li>
                   </ul>
@@ -2303,7 +2304,7 @@
              }, 3000);
            });
          
-           const galleryImages = [
+           let galleryImages = [
              { src: 'media/pastries_showcase_shelf.webp', alt: 'Pastries shelf' },
              { src: 'media/salads_showcase_shelf.webp',  alt: 'Salads showcase' },
              { src: 'media/fruits_berries_pastries_cropped.jpg', alt: 'Fruit & berry pastries' },
@@ -2315,8 +2316,25 @@
              { src: 'media/raspberry.webp', alt: 'Raspberries' },
              { src: 'media/swan_white_mousse.webp', alt: 'White mousse swan' },
              { src: 'media/stuffed_croissants_sweet.webp', alt: 'Stuffed croissants' },
-             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Chocolate layered cake slices' }
+             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Chocolate layered cake slices' },
+             { src: 'media/breakfast_foccacia_coffee.webp', alt: 'Breakfast focaccia and coffee' },
+             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Layered chocolate cake' },
+             { src: 'media/passsionfruit.webp', alt: 'Passion fruit dessert' },
+             { src: 'media/pear.webp', alt: 'Pear pastry' },
+             { src: 'media/interior_sitting.webp', alt: 'Café interior seating' },
+             { src: 'media/entrance.webp', alt: 'Café Berry entrance' }
            ];
+
+           function shuffleArray(arr) {
+             const shuffled = [...arr];
+             for (let i = shuffled.length - 1; i > 0; i--) {
+               const j = Math.floor(Math.random() * (i + 1));
+               [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+             }
+             return shuffled;
+           }
+
+           galleryImages = shuffleArray(galleryImages);
          
            const galleryRows = document.getElementById('galleryRows');
            const galleryPrev = document.getElementById('galleryPrev');
