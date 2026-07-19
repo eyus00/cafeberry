@@ -102,6 +102,11 @@
          .brand img{height:40px;display:block;}
          .nav-links{display:flex;list-style:none;gap:2.6rem;align-items:center;justify-self:end;margin:0;padding:0;}
          .nav-right{justify-self:end;display:flex;align-items:center;gap:.9rem;}
+         .language-switcher{display:flex;align-items:center;gap:.2rem;font-size:.72rem;letter-spacing:.12em;}
+         .language-switcher button{background:transparent;border:none;color:var(--cream-faint);cursor:pointer;font:inherit;padding:.35rem .3rem;transition:color .3s ease;}
+         .language-switcher button:hover,.language-switcher button.active{color:var(--gold-soft);}
+         .mobile-language-switcher{justify-content:center;margin-top:1rem;}
+         @media (max-width:768px){.language-switcher{display:none;}.mobile-language-switcher{display:flex;}}
          .nav-links a{font-size:.85rem;font-weight:500;letter-spacing:.04em;color:var(--cream-dim);position:relative;padding-bottom:3px;transition:color .3s ease;}
          .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease);}
          .nav-links a:hover{color:var(--cream);}
@@ -235,6 +240,10 @@
          .bf-card a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:.3rem;transition:gap .35s var(--ease-out);}
          .bf-card:hover a{gap:.6rem;}
          .menu-subhead{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:2.2rem 0 1rem;}
+         .caesar-note{margin-bottom:.6rem;}
+         .tea-subhead{margin:0 0 .4rem;font-size:.7rem;}
+         .tea-flavor-row{grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;}
+         .tea-flavor-tag{font-size:.9rem;padding:.6rem 0;}
          .menu-two-col{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem;}
          .m-item{display:flex;justify-content:space-between;align-items:stretch;gap:1rem;padding:.85rem .15rem;min-height:4.85rem;border-bottom:1px solid var(--line-soft);}
          .m-item:last-child{border-bottom:none;}
@@ -498,16 +507,21 @@
    </head>
    <body>
       <nav class="nav" id="navbar">
-         <a href="#" class="brand" aria-label="Café Berry home">
+         <a href="#" class="brand" aria-label="Café Berry home" data-i18n-attr="aria-label:nav.home">
          <img src="media/logonobg.png" alt="Café Berry">
          </a>
          <ul class="nav-links">
-            <li><a href="#gallery">Gallery</a></li>
-            <li><a href="#menu">Menu</a></li>
-            <li><a href="#visit">Visit</a></li>
+            <li><a href="#gallery" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="#menu" data-i18n="nav.menu">Menu</a></li>
+            <li><a href="#visit" data-i18n="nav.visit">Visit</a></li>
          </ul>
          <div class="nav-right">
-            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">
+            <div class="language-switcher" role="group" data-i18n-attr="aria-label:language.choose">
+               <button type="button" data-language="en" aria-pressed="true" data-i18n="language.english">EN</button>
+               <span aria-hidden="true">/</span>
+               <button type="button" data-language="fi" aria-pressed="false" data-i18n="language.finnish">FI</button>
+            </div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false" data-i18n-attr="aria-label:nav.openMenu">
                <span class="hamburger"><span></span><span></span><span></span></span>
                <svg class="close-icon" viewBox="0 0 24 24" width="18" height="18">
                   <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -518,66 +532,71 @@
       </nav>
       <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true">
          <ul class="mobile-nav-links">
-            <li><a href="#gallery" onclick="closeMobile()">Gallery</a></li>
-            <li><a href="#menu" onclick="closeMobile()">Menu</a></li>
-            <li><a href="#visit" onclick="closeMobile()">Visit</a></li>
+            <li><a href="#gallery" onclick="closeMobile()" data-i18n="nav.gallery">Gallery</a></li>
+            <li><a href="#menu" onclick="closeMobile()" data-i18n="nav.menu">Menu</a></li>
+            <li><a href="#visit" onclick="closeMobile()" data-i18n="nav.visit">Visit</a></li>
          </ul>
+         <div class="language-switcher mobile-language-switcher" role="group" data-i18n-attr="aria-label:language.choose">
+            <button type="button" data-language="en" aria-pressed="true" data-i18n="language.english">EN</button>
+            <span aria-hidden="true">/</span>
+            <button type="button" data-language="fi" aria-pressed="false" data-i18n="language.finnish">FI</button>
+         </div>
       </div>
       <section class="hero">
-         <div class="hero-bg"><img id="heroImg" src="media/hero_image.jpeg" alt="Café Berry interior" fetchpriority="high"></div>
+         <div class="hero-bg"><img id="heroImg" src="media/hero_image.jpeg" alt="Café Berry interior" fetchpriority="high" data-i18n-attr="alt:hero.imageAlt"></div>
          <div class="hero-content">
             <div class="hero-eyebrow">
-               <img src="media/logonobg.png" alt="Café Berry logo">
-               <div class="tag">Bakery · Restaurant · Wine</div>
+               <img src="media/logonobg.png" alt="Café Berry logo" data-i18n-attr="alt:hero.logoAlt">
+               <div class="tag" data-i18n="hero.tagline">Bakery · Restaurant · Wine</div>
             </div>
-            <h1 class="hero-title">Every morning,<br>baked with <em>intention</em></h1>
+            <h1 class="hero-title" data-i18n="hero.title" data-i18n-html>Every morning,<br>baked with <em>intention</em></h1>
             <div class="hero-actions">
-               <a href="#menu" class="btn btn-primary"><span class="label">Menu</span></a>
-               <a href="#visit" class="btn btn-ghost"><span class="label">Visit</span></a>
+               <a href="#menu" class="btn btn-primary"><span class="label" data-i18n="hero.menu">Menu</span></a>
+               <a href="#visit" class="btn btn-ghost"><span class="label" data-i18n="hero.visit">Visit</span></a>
             </div>
          </div>
          <div class="hero-scroll">
-            <span>Scroll</span>
+            <span data-i18n="hero.scroll">Scroll</span>
             <div class="drip-track"></div>
          </div>
       </section>
       <div class="ticker" aria-hidden="true">
          <div class="ticker-track">
-            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span><span>Chocolate Tart</span><span>Berry Pavlova</span><span>Matcha Latte</span><span>Nordic Sourdough</span>
-            <span>Espresso</span><span>Fresh Croissant</span><span>Wild Berry</span><span>Ceremonial Matcha</span><span>Slow Brewed</span><span>Warm Focaccia</span><span>Chocolate Tart</span><span>Berry Pavlova</span><span>Matcha Latte</span><span>Nordic Sourdough</span>
+            <span data-i18n="ticker.espresso">Espresso</span><span data-i18n="ticker.croissant">Fresh Croissant</span><span data-i18n="ticker.berry">Wild Berry</span><span data-i18n="ticker.matcha">Ceremonial Matcha</span><span data-i18n="ticker.brew">Slow Brewed</span><span data-i18n="ticker.focaccia">Warm Focaccia</span><span data-i18n="ticker.tart">Chocolate Tart</span><span data-i18n="ticker.pavlova">Berry Pavlova</span><span data-i18n="ticker.latte">Matcha Latte</span><span data-i18n="ticker.sourdough">Nordic Sourdough</span>
+            <span data-i18n="ticker.espresso">Espresso</span><span data-i18n="ticker.croissant">Fresh Croissant</span><span data-i18n="ticker.berry">Wild Berry</span><span data-i18n="ticker.matcha">Ceremonial Matcha</span><span data-i18n="ticker.brew">Slow Brewed</span><span data-i18n="ticker.focaccia">Warm Focaccia</span><span data-i18n="ticker.tart">Chocolate Tart</span><span data-i18n="ticker.pavlova">Berry Pavlova</span><span data-i18n="ticker.latte">Matcha Latte</span><span data-i18n="ticker.sourdough">Nordic Sourdough</span>
          </div>
       </div>
       <section class="gallery" id="gallery">
          <div class="gallery-head">
             <div>
-               <div class="eyebrow center rv">Gallery</div>
-               <h2 class="section-title rv rv2">Baked fresh, <em>every morning</em></h2>
+               <div class="eyebrow center rv" data-i18n="gallery.eyebrow">Gallery</div>
+               <h2 class="section-title rv rv2" data-i18n="gallery.title" data-i18n-html>Baked fresh, <em>every morning</em></h2>
             </div>
-            <p class="section-sub rv rv2">Small batches, real ingredients, and a proof drawer that never sleeps.</p>
+            <p class="section-sub rv rv2" data-i18n="gallery.description">Small batches, real ingredients, and a proof drawer that never sleeps.</p>
          </div>
          <div class="gallery-stage">
-            <button class="gallery-arrow prev" id="galleryPrev" aria-label="Previous photos">
+            <button class="gallery-arrow prev" id="galleryPrev" aria-label="Previous photos" data-i18n-attr="aria-label:gallery.previous">
                <svg viewBox="0 0 24 24">
                   <path d="M15 6l-6 6 6 6"/>
                </svg>
             </button>
-            <button class="gallery-arrow next" id="galleryNext" aria-label="Next photos">
+            <button class="gallery-arrow next" id="galleryNext" aria-label="Next photos" data-i18n-attr="aria-label:gallery.next">
                <svg viewBox="0 0 24 24">
                   <path d="M9 6l6 6-6 6"/>
                </svg>
             </button>
             <div class="gallery-rows" id="galleryRows"></div>
-            <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Gallery pagination"></div>
+            <div class="gallery-dots" id="galleryDots" role="tablist" aria-label="Gallery pagination" data-i18n-attr="aria-label:gallery.pagination"></div>
          </div>
          <div id="lightbox" class="lightbox" aria-hidden="true">
-            <button class="lightbox-close" id="lightboxClose" aria-label="Close"></button>
-            <div class="lightbox-stage"><img id="lightboxImg" src="" alt="Gallery preview"></div>
-            <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image">
+            <button class="lightbox-close" id="lightboxClose" aria-label="Close" data-i18n-attr="aria-label:gallery.close"></button>
+            <div class="lightbox-stage"><img id="lightboxImg" src="" alt="Gallery preview" data-i18n-attr="alt:gallery.preview"></div>
+            <button class="lightbox-nav prev" id="lightboxPrev" aria-label="Previous image" data-i18n-attr="aria-label:gallery.previousImage">
                <svg viewBox="0 0 24 24">
                   <path d="M15 6l-6 6 6 6"/>
                </svg>
             </button>
-            <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image">
+            <button class="lightbox-nav next" id="lightboxNext" aria-label="Next image" data-i18n-attr="aria-label:gallery.nextImage">
                <svg viewBox="0 0 24 24">
                   <path d="M9 6l6 6-6 6"/>
                </svg>
@@ -588,20 +607,20 @@
       <section class="interlude">
          <div class="interlude-content rv">
             <div class="interlude-mark">"</div>
-            <div class="interlude-quote">Good coffee, warm bread, and a quiet corner — sometimes that's all the world needs to feel right again.</div>
-            <div class="interlude-attr">— The Berry Philosophy</div>
+            <div class="interlude-quote" data-i18n="quote.text">Good coffee, warm bread, and a quiet corner — sometimes that's all the world needs to feel right again.</div>
+            <div class="interlude-attr" data-i18n="quote.attribution">— The Berry Philosophy</div>
          </div>
       </section>
       <!-- ===================== MENU ===================== -->
       <section class="full-menu" id="menu">
          <div class="full-menu-head">
-            <div class="eyebrow center rv">The Menu</div>
-            <h2 class="section-title rv rv2">Crafted with <em>care</em></h2>
-            <p class="section-sub rv rv3">Every category below is worth its own visit — scroll through, or jump straight to what you're craving.</p>
+            <div class="eyebrow center rv" data-i18n="menu.eyebrow">The Menu</div>
+            <h2 class="section-title rv rv2" data-i18n="menu.title" data-i18n-html>Crafted with <em>care</em></h2>
+            <p class="section-sub rv rv3" data-i18n="menu.intro">Every category below is worth its own visit — scroll through, or jump straight to what you're craving.</p>
             <div class="menu-legend rv rv3">
-               <div class="legend-item"><span class="legend-dot dot-gf"></span>Gluten-Free</div>
-               <div class="legend-item"><span class="legend-dot dot-lf"></span>Lactose-Free</div>
-               <div class="legend-item"><span class="legend-dot dot-vg"></span>Vegan</div>
+               <div class="legend-item"><span class="legend-dot dot-gf"></span><span data-i18n="menu.glutenFree">Gluten-Free</span></div>
+               <div class="legend-item"><span class="legend-dot dot-lf"></span><span data-i18n="menu.lactoseFree">Lactose-Free</span></div>
+               <div class="legend-item"><span class="legend-dot dot-vg"></span><span data-i18n="menu.vegan">Vegan</span></div>
             </div>
          </div>
          <nav class="menu-rail-mobile" id="railMobile">
@@ -1022,7 +1041,7 @@
                      <div class="flavor-tag">Aged Balsamic</div>
                   </div>
                   <div class="menu-subhead rv">Caesar Salad</div>
-                  <p class="menu-cat-note rv" style="margin-bottom:.6rem;">Served with your choice of chicken, salmon, or shrimp — finished with parmesan and crisp croutons.</p>
+                  <p class="menu-cat-note rv caesar-note">Served with your choice of chicken, salmon, or shrimp — finished with parmesan and crisp croutons.</p>
                   <div class="price-schedule rv">
                      <div class="price-block">
                         <div class="price-block-label">Weekdays</div>
@@ -1294,36 +1313,36 @@
                   <div class="menu-subhead rv">Tea Selection</div>
                   <div class="menu-two-col rv">
                      <div>
-                        <div class="menu-subhead" style="margin:0 0 .4rem;font-size:.7rem;">Green Tea</div>
-                        <div class="flavor-row" style="grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;">
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Sencha Sakura</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Sencha Lemon Mandarin</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Wu Lu Shan Organic (China)</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Organic Sencha Lemonginger</div>
+                        <div class="menu-subhead tea-subhead">Green Tea</div>
+                        <div class="flavor-row tea-flavor-row">
+                           <div class="flavor-tag tea-flavor-tag">Sencha Sakura</div>
+                           <div class="flavor-tag tea-flavor-tag">Sencha Lemon Mandarin</div>
+                           <div class="flavor-tag tea-flavor-tag">Wu Lu Shan Organic (China)</div>
+                           <div class="flavor-tag tea-flavor-tag">Organic Sencha Lemonginger</div>
                         </div>
-                        <div class="menu-subhead" style="margin:0 0 .4rem;font-size:.7rem;">Black Tea</div>
-                        <div class="flavor-row" style="grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;">
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Winter Orange</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Organic Darjeeling</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Earl Grey Excelsior</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">KoomSong (Unflavoured)</div>
+                        <div class="menu-subhead tea-subhead">Black Tea</div>
+                        <div class="flavor-row tea-flavor-row">
+                           <div class="flavor-tag tea-flavor-tag">Winter Orange</div>
+                           <div class="flavor-tag tea-flavor-tag">Organic Darjeeling</div>
+                           <div class="flavor-tag tea-flavor-tag">Earl Grey Excelsior</div>
+                           <div class="flavor-tag tea-flavor-tag">KoomSong (Unflavoured)</div>
                         </div>
                      </div>
                      <div>
-                        <div class="menu-subhead" style="margin:0 0 .4rem;font-size:.7rem;">Herbal &amp; Rooibos</div>
-                        <div class="flavor-row" style="grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;">
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Rooibos Organic Lemongrass Orange</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Camomile Relax</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Nefer Nefer Organic Herbs</div>
+                        <div class="menu-subhead tea-subhead">Herbal &amp; Rooibos</div>
+                        <div class="flavor-row tea-flavor-row">
+                           <div class="flavor-tag tea-flavor-tag">Rooibos Organic Lemongrass Orange</div>
+                           <div class="flavor-tag tea-flavor-tag">Camomile Relax</div>
+                           <div class="flavor-tag tea-flavor-tag">Nefer Nefer Organic Herbs</div>
                         </div>
-                        <div class="menu-subhead" style="margin:0 0 .4rem;font-size:.7rem;">White Tea</div>
-                        <div class="flavor-row" style="grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;">
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Jasmine Silver</div>
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Apricot</div>
+                        <div class="menu-subhead tea-subhead">White Tea</div>
+                        <div class="flavor-row tea-flavor-row">
+                           <div class="flavor-tag tea-flavor-tag">Jasmine Silver</div>
+                           <div class="flavor-tag tea-flavor-tag">Apricot</div>
                         </div>
-                        <div class="menu-subhead" style="margin:0 0 .4rem;font-size:.7rem;">Oolong</div>
-                        <div class="flavor-row" style="grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;">
-                           <div class="flavor-tag" style="font-size:.9rem;padding:.6rem 0;">Organic Milk Oolong</div>
+                        <div class="menu-subhead tea-subhead">Oolong</div>
+                        <div class="flavor-row tea-flavor-row">
+                           <div class="flavor-tag tea-flavor-tag">Organic Milk Oolong</div>
                         </div>
                      </div>
                   </div>
@@ -2092,18 +2111,18 @@
          </div>
       </section>
       <section class="visit" id="visit">
-         <div class="eyebrow center rv">Visit</div>
-         <h2 class="section-title rv rv2">Come find your <em>favorite seat</em></h2>
+         <div class="eyebrow center rv" data-i18n="visit.eyebrow">Visit</div>
+         <h2 class="section-title rv rv2" data-i18n="visit.title" data-i18n-html>Come find your <em>favorite seat</em></h2>
          <div class="visit-intro rv">
-            <h3 class="visit-concept-title">A Space for Presence</h3>
+            <h3 class="visit-concept-title" data-i18n="visit.concept">A Space for Presence</h3>
             <div class="visit-values">
                <div class="visit-value">
                   <div class="visit-value-accent"></div>
-                  <p>A laptop-free café dedicated to conversation, and connection</p>
+                  <p data-i18n="visit.valueOne">A laptop-free café dedicated to conversation, and connection</p>
                </div>
                <div class="visit-value">
                   <div class="visit-value-accent"></div>
-                  <p>We do not accept reservations — walk in anytime and find your favorite seat</p>
+                  <p data-i18n="visit.valueTwo">We do not accept reservations — walk in anytime and find your favorite seat</p>
                </div>
             </div>
          </div>
@@ -2115,8 +2134,8 @@
                      <circle cx="12" cy="9" r="2.4"/>
                   </svg>
                </div>
-               <div class="visit-block-label">Location</div>
-               <div class="visit-block-text">Annankatu 27<br>Helsinki, Finland</div>
+               <div class="visit-block-label" data-i18n="visit.location">Location</div>
+               <div class="visit-block-text" data-i18n="visit.address" data-i18n-html>Annankatu 27<br>Helsinki, Finland</div>
             </div>
             <div class="visit-block rv rv2">
                <div class="visit-icon">
@@ -2125,8 +2144,8 @@
                      <path d="M12 7v5l3.5 2"/>
                   </svg>
                </div>
-               <div class="visit-block-label">Hours</div>
-               <div class="visit-block-text">Mon – Thu: 09:00 – 21:00<br>Fri – Sat: 09:00 – 23:00<br>Sun: 10:00 – 18:00</div>
+               <div class="visit-block-label" data-i18n="visit.hours">Hours</div>
+               <div class="visit-block-text" data-i18n="visit.hoursValue" data-i18n-html>Mon – Thu: 09:00 – 21:00<br>Fri – Sat: 09:00 – 23:00<br>Sun: 10:00 – 18:00</div>
             </div>
             <div class="visit-block rv rv3">
                <div class="visit-icon">
@@ -2135,18 +2154,18 @@
                      <path d="M3.5 6.5l8.5 6 8.5-6"/>
                   </svg>
                </div>
-               <div class="visit-block-label">Contact</div>
+               <div class="visit-block-label" data-i18n="visit.contact">Contact</div>
                <div class="visit-block-text"><a href="mailto:info@cafeberryhelsinki.com">info@cafeberryhelsinki.com</a></div>
             </div>
          </div>
       </section>
       <section class="newsletter" id="newsletter">
          <div class="newsletter-inner rv">
-            <h2 class="newsletter-title">Stay in the <em>loop</em></h2>
-            <p class="newsletter-text">Seasonal menus, special events, and a sprinkle of inspiration — delivered gently to your inbox.</p>
+            <h2 class="newsletter-title" data-i18n="newsletter.title" data-i18n-html>Stay in the <em>loop</em></h2>
+            <p class="newsletter-text" data-i18n="newsletter.text">Seasonal menus, special events, and a sprinkle of inspiration — delivered gently to your inbox.</p>
             <form class="newsletter-form" id="newsletterForm">
-               <input type="email" placeholder="Your email address" required aria-label="Email address">
-               <button type="submit">Subscribe</button>
+               <input type="email" placeholder="Your email address" required aria-label="Email address" data-i18n-attr="placeholder:newsletter.email,aria-label:newsletter.emailLabel">
+               <button type="submit" data-i18n="newsletter.subscribe">Subscribe</button>
             </form>
          </div>
       </section>
@@ -2154,7 +2173,7 @@
          <div class="footer-top">
             <div class="footer-brand">
                <img src="media/logonobg.png" alt="Café Berry" class="footer-brand-logo">
-               <div class="footer-brand-tag">Bakery · Restaurant · Wine</div>
+               <div class="footer-brand-tag" data-i18n="footer.tagline">Bakery · Restaurant · Wine</div>
                <div class="footer-social">
                   <a href="https://www.instagram.com/cafeberryhelsinki/" aria-label="Instagram">
                      <svg viewBox="0 0 24 24">
@@ -2177,7 +2196,7 @@
             </div>
             <div class="footer-links-group">
                <div class="footer-col">
-                  <h4>Explore</h4>
+                  <h4 data-i18n="footer.explore">Explore</h4>
                   <ul>
                      <li><a href="#gallery">Gallery</a></li>
                      <li><a href="#menu">Menu</a></li>
@@ -2185,16 +2204,16 @@
                   </ul>
                </div>
                <div class="footer-col">
-                  <h4>Info</h4>
+                  <h4 data-i18n="footer.info">Info</h4>
                   <ul>
-                     <li><a href="https://www.oivahymy.fi/api/raportti/237191">Oiva Report</a></li>
+                     <li><a href="https://www.oivahymy.fi/api/raportti/237191" data-i18n="footer.oiva">Oiva Report</a></li>
                   </ul>
                </div>
             </div>
          </div>
          <div class="footer-bottom">
-            <p>© 2026 Café Berry. All rights reserved.</p>
-            <div class="footer-bottom-links"><a href="#">Privacy</a><a href="#">Terms</a></div>
+            <p data-i18n="footer.copyright">© 2026 Café Berry. All rights reserved.</p>
+            <div class="footer-bottom-links"><a href="#" data-i18n="footer.privacy">Privacy</a><a href="#" data-i18n="footer.terms">Terms</a></div>
          </div>
       </footer>
       <script>
@@ -2295,7 +2314,7 @@
              e.preventDefault();
              const btn = newsletterForm.querySelector('button');
              const original = btn.textContent;
-             btn.textContent = 'Subscribed';
+             btn.textContent = window.translate ? window.translate('newsletter.subscribed') : 'Subscribed';
              btn.disabled = true;
              setTimeout(() => {
                btn.textContent = original;
@@ -2305,24 +2324,24 @@
            });
          
            let galleryImages = [
-             { src: 'media/pastries_showcase_shelf.webp', alt: 'Pastries shelf' },
-             { src: 'media/salads_showcase_shelf.webp',  alt: 'Salads showcase' },
-             { src: 'media/fruits_berries_pastries_cropped.jpg', alt: 'Fruit & berry pastries' },
-             { src: 'media/smorbrod.webp',  alt: 'Smörbröd' },
-             { src: 'media/brioche_cream_raspberries.webp', alt: 'Brioche with cream and raspberries' },
-             { src: 'media/chocolate_berry_bars.webp', alt: 'Chocolate berry bars' },
-             { src: 'media/apple.webp',  alt: 'Apple tart' },
-             { src: 'media/mango.webp',  alt: 'Mango dessert' },
-             { src: 'media/raspberry.webp', alt: 'Raspberries' },
-             { src: 'media/swan_white_mousse.webp', alt: 'White mousse swan' },
-             { src: 'media/stuffed_croissants_sweet.webp', alt: 'Stuffed croissants' },
-             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Chocolate layered cake slices' },
-             { src: 'media/breakfast_foccacia_coffee.webp', alt: 'Breakfast focaccia and coffee' },
-             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Layered chocolate cake' },
-             { src: 'media/passsionfruit.webp', alt: 'Passion fruit dessert' },
-             { src: 'media/pear.webp', alt: 'Pear pastry' },
-             { src: 'media/interior_sitting.webp', alt: 'Café interior seating' },
-             { src: 'media/entrance.webp', alt: 'Café Berry entrance' }
+             { src: 'media/pastries_showcase_shelf.webp', alt: 'Pastries shelf', key: 'pastriesShelf' },
+             { src: 'media/salads_showcase_shelf.webp',  alt: 'Salads showcase', key: 'saladsShowcase' },
+             { src: 'media/fruits_berries_pastries_cropped.jpg', alt: 'Fruit & berry pastries', key: 'fruitBerryPastries' },
+             { src: 'media/smorbrod.webp',  alt: 'Smörbröd', key: 'smorbrod' },
+             { src: 'media/brioche_cream_raspberries.webp', alt: 'Brioche with cream and raspberries', key: 'brioche' },
+             { src: 'media/chocolate_berry_bars.webp', alt: 'Chocolate berry bars', key: 'chocolateBars' },
+             { src: 'media/apple.webp',  alt: 'Apple tart', key: 'appleTart' },
+             { src: 'media/mango.webp',  alt: 'Mango dessert', key: 'mangoDessert' },
+             { src: 'media/raspberry.webp', alt: 'Raspberries', key: 'raspberries' },
+             { src: 'media/swan_white_mousse.webp', alt: 'White mousse swan', key: 'mousseSwan' },
+             { src: 'media/stuffed_croissants_sweet.webp', alt: 'Stuffed croissants', key: 'stuffedCroissants' },
+             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Chocolate layered cake slices', key: 'chocolateCake' },
+             { src: 'media/breakfast_foccacia_coffee.webp', alt: 'Breakfast focaccia and coffee', key: 'focacciaCoffee' },
+             { src: 'media/chocolate_layered_cake_slices.webp', alt: 'Layered chocolate cake', key: 'layeredCake' },
+             { src: 'media/passsionfruit.webp', alt: 'Passion fruit dessert', key: 'passionfruit' },
+             { src: 'media/pear.webp', alt: 'Pear pastry', key: 'pearPastry' },
+             { src: 'media/interior_sitting.webp', alt: 'Café interior seating', key: 'interior' },
+             { src: 'media/entrance.webp', alt: 'Café Berry entrance', key: 'entrance' }
            ];
 
            function shuffleArray(arr) {
@@ -2358,6 +2377,7 @@
                const image = document.createElement('img');
                image.src = img.src;
                image.alt = img.alt;
+               image.dataset.i18nAttr = `alt:gallery.images.${img.key}`;
                image.loading = 'lazy';
                image.decoding = 'async';
                slide.appendChild(image);
@@ -2414,7 +2434,7 @@
            for (let i = 0; i < totalPages; i++){
              const dot = document.createElement('button');
              dot.type = 'button';
-             dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+             dot.setAttribute('aria-label', window.translate ? window.translate('gallery.goToSlide', { number: i + 1 }) : `Go to slide ${i+1}`);
              dot.addEventListener('click', () => goToPage(i));
              galleryDots.appendChild(dot);
            }
@@ -2462,7 +2482,7 @@
                  for (let i = dots.length; i < newTotal; i++){
                    const dot = document.createElement('button');
                    dot.type = 'button';
-                   dot.setAttribute('aria-label', `Go to slide ${i+1}`);
+                   dot.setAttribute('aria-label', window.translate ? window.translate('gallery.goToSlide', { number: i + 1 }) : `Go to slide ${i+1}`);
                    dot.addEventListener('click', () => goToPage(i));
                    galleryDots.appendChild(dot);
                  }
@@ -2490,7 +2510,7 @@
              lbIdx = i;
              const img = galleryImages[i];
              lightboxImg.src = img.src;
-             lightboxImg.alt = img.alt;
+             lightboxImg.alt = window.translate ? window.translate(`gallery.images.${img.key}`) : img.alt;
              lightboxCounter.textContent = `${i+1} / ${galleryImages.length}`;
              lightbox.classList.add('open');
              lightbox.setAttribute('aria-hidden', 'false');
@@ -2525,5 +2545,6 @@
          
          })();
       </script>
+      <script src="js/language.js"></script>
    </body>
 </html>
