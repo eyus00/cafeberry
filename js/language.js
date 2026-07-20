@@ -47,12 +47,18 @@
     });
 
     const menuCopy = translations.menu?.copy || {};
-    const menuCopyTargets = '.menu-cat-note, .menu-subhead, .m-item-name, .m-item-desc, .bf-card h4, .bf-card p, .bf-card a, .flavor-tag, .price-block-label, .price-block-time, .wine-region, .wine-style, .featured-eyebrow, .featured-desc, .featured-notes span, .featured-staff, .featured-bottle span';
+    const menuCopyTargets = '.menu-cat-note, .menu-subhead, .m-item-name, .m-item-desc, .bf-card h4, .bf-card p, .bf-card a, .flavor-tag, .price-block-label, .price-block-time, .wine-region, .wine-style, .featured-eyebrow, .featured-name, .featured-region, .featured-desc, .featured-notes span, .featured-staff, .featured-bottle span';
     document.querySelectorAll(menuCopyTargets).forEach((element) => {
       const sourceText = element.dataset.sourceText || element.textContent.trim();
       element.dataset.sourceText = sourceText;
-      if (Object.prototype.hasOwnProperty.call(menuCopy, sourceText)) element.textContent = menuCopy[sourceText];
-      else if (currentLanguage === 'en') element.textContent = sourceText;
+      const localizedText = menuCopy[sourceText] ?? menuCopy[sourceText.replace(/&/g, '&amp;')];
+      if (localizedText !== undefined) {
+        if (element.querySelector('.m-tags') && element.firstChild) element.firstChild.textContent = localizedText;
+        else element.textContent = localizedText;
+      } else if (currentLanguage === 'en') {
+        if (element.querySelector('.m-tags') && element.firstChild) element.firstChild.textContent = sourceText;
+        else element.textContent = sourceText;
+      }
     });
 
     document.querySelectorAll('[data-i18n-attr]').forEach((element) => {
