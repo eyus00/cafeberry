@@ -9,7 +9,7 @@
   "nav": { "home": "Café Berryn etusivu", "gallery": "Galleria", "menu": "Menu", "visit": "Vierailu", "openMenu": "Avaa valikko", "closeMenu": "Sulje valikko" },
   "language": { "english": "EN", "finnish": "FI", "choose": "Valitse kieli" },
   "ticker": { "espresso": "Espresso", "croissant": "Tuore croissant", "berry": "Metsämarjat", "matcha": "Seremoniallinen matcha", "brew": "Hitaasti uutettu", "focaccia": "Lämmin focaccia", "tart": "Suklaatorttu", "pavlova": "Marjapavlova", "latte": "Matcha latte", "sourdough": "Pohjoismainen hapanjuuri" },
-  "hero": { "logoAlt": "Café Berryn logo", "imageAlt": "Café Berryn sisätila", "tagline": "Leipomo · Ravintola · Viini", "title": "Joka aamu,<br>leivottu <em>ajatuksella</em>", "menu": "Menu", "visit": "Vierailu", "scroll": "Vieritä" },
+  "hero": { "logoAlt": "Café Berryn logo", "imageAlt": "Café Berryn sisätila", "tagline": "Leipomo · Ravintola · Viini", "title": "Joka aamu,<br>leivottu <em>ajatuksella</em>", "menu": "Menu", "visit": "Vierailu", "scroll": "Scroll" },
   "gallery": {
     "eyebrow": "Galleria", "title": "Tuoreena leivottu, <em>joka aamu</em>", "description": "Pieniä eriä, aitoja raaka-aineita ja kohotuslaatikko, joka ei koskaan nuku.",
     "previous": "Edelliset kuvat", "next": "Seuraavat kuvat", "pagination": "Gallerian sivutus", "close": "Sulje", "previousImage": "Edellinen kuva", "nextImage": "Seuraava kuva", "preview": "Gallerian esikatselu", "goToSlide": "Siirry kuvaan {number}", "unavailable": "ei saatavilla",

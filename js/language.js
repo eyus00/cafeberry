@@ -91,15 +91,31 @@
     });
   }
 
+  const languageFadeDuration = 240;
+
+  const wait = (duration) => new Promise((resolve) => setTimeout(resolve, duration));
+
   async function setLanguage(language) {
     const nextLanguage = supportedLanguages.includes(language) ? language : 'en';
     if (!english) english = await loadLanguage('en');
     const translations = nextLanguage === 'en' ? english : await loadLanguage(nextLanguage);
+    const shouldAnimate = currentLanguage && currentLanguage !== nextLanguage && !window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (shouldAnimate) {
+      document.body.classList.add('language-transitioning');
+      await wait(languageFadeDuration);
+    }
+
     currentLanguage = nextLanguage;
     window.translate = (key, variables) => translate(translations, key, variables);
     translateDocument(translations);
     localStorage.setItem('language', nextLanguage);
     window.dispatchEvent(new CustomEvent('languagechange', { detail: { language: nextLanguage, translations, translate: (key, variables) => translate(translations, key, variables) } }));
+
+    if (shouldAnimate) {
+      document.body.offsetHeight;
+      document.body.classList.remove('language-transitioning');
+    }
   }
 
   window.setLanguage = setLanguage;
