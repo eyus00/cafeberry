@@ -41,7 +41,7 @@
     const railKeys = { breakfast: 'breakfast', pastries: 'pastries', savory: 'savory', sweet: 'sweet', soup: 'soup', salads: 'salads', coffee: 'coffee', iced: 'iced', flavoured: 'lattes', juices: 'juices', tea: 'tea', softdrinks: 'softDrinks', wines: 'wines', beer: 'beer', nonalcoholic: 'nonAlcoholic', cocktails: 'cocktails', spirits: 'spirits', snacks: 'snacks', gelato: 'gelato' };
     Object.entries(railKeys).forEach(([id, key]) => {
       const value = translate(translations, `menu.rail.${key}`);
-      document.querySelectorAll(`[href="#${id}"]`).forEach((link) => { link.textContent = value; });
+      document.querySelectorAll(`.menu-rail a[href="#${id}"], .menu-rail-mobile a[href="#${id}"]`).forEach((link) => { link.textContent = value; });
       const heading = document.querySelector(`#${id} .menu-cat-title`);
       if (heading) heading.innerHTML = translate(translations, `menu.categories.${key}`);
     });
