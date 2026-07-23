@@ -1,0 +1,13 @@
+/* Button variants — primary & ghost */
+
+.btn{--btn-pad-x:1.6rem;font-family:var(--sans);font-size:.78rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;padding:.95rem var(--btn-pad-x);border:none;cursor:pointer;position:relative;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;isolation:isolate;transition:color .45s ease,box-shadow .5s ease;}
+.btn .label{position:relative;z-index:2;}
+.btn-primary{background:var(--gold);color:var(--espresso);box-shadow:0 1px 0 rgba(255,255,255,.08) inset,0 0 0 0 rgba(199,160,89,0);}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(120deg,var(--gold-soft) 0%,var(--gold) 50%,var(--gold-deep) 100%);opacity:0;z-index:1;transition:opacity .6s var(--ease-out);}
+.btn-primary::after{content:'';position:absolute;inset:0;background:radial-gradient(120% 80% at 50% 0%,rgba(255,255,255,.28),transparent 55%);opacity:0;z-index:1;transition:opacity .6s var(--ease-out);}
+.btn-primary:hover{box-shadow:0 10px 30px -8px rgba(199,160,89,.45),0 0 0 1px rgba(247,241,230,.06);}
+.btn-primary:hover::before{opacity:1;}
+.btn-primary:hover::after{opacity:1;}
+.btn-ghost{background:transparent;color:var(--cream);border:1px solid var(--line);padding:calc(.95rem - 1px) calc(var(--btn-pad-x) - 1px);}
+.btn-ghost .label{color:inherit;transition:color .55s var(--ease-out);}
+.btn-ghost:hover{background:rgba(199,160,119,.06);border-color:var(--gold);box-shadow:0 10px 30px -10px rgba(199,160,89,.32),0 0 0 1px rgba(247,241,230,.04);color:var(--cream);}

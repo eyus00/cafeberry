@@ -1,0 +1,7 @@
+/* Quote / interlude section */
+
+.interlude{padding:6rem 3.2rem;text-align:center;position:relative;background:var(--espresso-mid);}
+.interlude-content{max-width:640px;margin:0 auto;position:relative;}
+.interlude-mark{font-family:var(--serif);font-size:3.4rem;color:var(--gold);opacity:.45;line-height:1;margin-bottom:.4rem;}
+.interlude-quote{font-family:var(--serif);font-size:clamp(1.2rem,2.2vw,1.65rem);font-style:italic;font-weight:300;line-height:1.7;color:var(--cream-dim);}
+.interlude-attr{margin-top:1.4rem;font-size:.74rem;letter-spacing:.24em;text-transform:uppercase;color:var(--cream-faint);}

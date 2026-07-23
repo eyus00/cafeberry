@@ -1,0 +1,100 @@
+/* Full menu: legend, sticky rail, category blocks, items, wine cards */
+
+.full-menu{padding:9rem 0 7rem;max-width:1280px;margin:0 auto;}
+.full-menu-head{padding:0 3.2rem;text-align:center;margin-bottom:4.5rem;}
+.full-menu-head .section-sub{margin:1.1rem auto 0;}
+.menu-legend{display:flex;gap:1.6rem;justify-content:center;margin-top:1.6rem;flex-wrap:wrap;}
+.legend-item{display:flex;align-items:center;gap:.5rem;font-size:.78rem;color:var(--cream-dim);}
+.legend-dot{width:7px;height:7px;border-radius:50%;}
+.dot-gf{background:var(--gold);}
+.dot-lf{background:var(--sage);}
+.dot-vg{background:var(--berry);}
+.menu-layout{display:grid;grid-template-columns:210px 1fr;gap:4rem;padding:0 3.2rem;align-items:flex-start;}
+.menu-rail{position:sticky;top:110px;padding-left:1.4rem;border-left:1px solid var(--line);}
+.rail-indicator{position:absolute;left:-1px;top:0;width:1px;height:38px;background:var(--gold);transition:transform .5s var(--ease),height .5s var(--ease);}
+.rail-link{display:block;font-size:.86rem;font-weight:500;color:var(--cream-faint);padding:.5rem 0;transition:color .35s ease,transform .35s ease;}
+.rail-link:hover{color:var(--cream);}
+.rail-link.active{color:var(--gold-soft);transform:translateX(4px);}
+.menu-content{min-width:0;}
+.menu-block{padding-bottom:5rem;margin-bottom:5rem;border-bottom:1px solid var(--line-soft);scroll-margin-top:110px;}
+.menu-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
+.menu-block-head{margin-bottom:2.4rem;}
+.menu-cat-num{font-size:.7rem;letter-spacing:.3em;color:var(--gold);text-transform:uppercase;margin-bottom:.7rem;}
+.menu-cat-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.4vw,2.1rem);}
+.menu-cat-title em{font-style:italic;color:var(--gold-soft);}
+.menu-cat-note{font-size:.92rem;font-style:italic;color:var(--cream-dim);font-weight:300;margin-top:.7rem;max-width:520px;}
+.bf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem;}
+.bf-card{border:1px solid var(--line);padding:2rem 1.6rem;transition:all .5s var(--ease-out);position:relative;cursor:pointer;background:transparent;overflow:hidden;}
+.bf-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--surface) 0%,transparent 60%);opacity:0;transition:opacity .5s var(--ease-out);}
+.bf-card > *{position:relative;z-index:1;}
+.bf-card:hover{border-color:rgba(199,160,89,.4);}
+.bf-card:hover::before{opacity:1;}
+.bf-card h4{font-family:var(--serif);font-style:italic;font-size:1.25rem;font-weight:400;margin-bottom:.6rem;color:var(--cream);}
+.bf-card p{font-size:.86rem;color:var(--cream-dim);font-weight:300;margin-bottom:1.2rem;line-height:1.7;}
+.bf-card a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:.3rem;transition:gap .35s var(--ease-out);}
+.bf-card:hover a{gap:.6rem;}
+.menu-subhead{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:2.2rem 0 1rem;}
+.caesar-note{margin-bottom:.6rem;}
+.tea-subhead{margin:0 0 .4rem;font-size:.7rem;}
+.tea-flavor-row{grid-template-columns:1fr;margin:.4rem 0 1rem;gap:.3rem;}
+.tea-flavor-tag{font-size:.9rem;padding:.6rem 0;}
+.menu-two-col{display:grid;grid-template-columns:1fr 1fr;gap:0 3.5rem;}
+.m-item{display:flex;justify-content:space-between;align-items:stretch;gap:1rem;padding:.85rem .15rem;min-height:4.85rem;border-bottom:1px solid var(--line-soft);}
+.m-item:last-child{border-bottom:none;}
+.m-item-left{flex:1;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:.18rem;}
+.m-item-top{display:flex;align-items:center;gap:.6rem;flex-wrap:nowrap;}
+.m-item-name{font-size:1.02rem;font-weight:500;color:var(--cream);}
+.m-item-desc{font-size:.82rem;font-style:italic;color:var(--cream-dim);font-weight:300;display:block;line-height:1.45;}
+.m-tags{display:inline-flex;gap:.35rem;align-items:center;flex-shrink:0;white-space:nowrap;margin-left:.4rem;}
+.tag-dot{width:6px;height:6px;border-radius:50%;display:inline-block;}
+.m-item-price{font-family:var(--serif);font-style:italic;font-size:1.02rem;color:var(--gold-soft);white-space:nowrap;margin-left:1rem;align-self:center;flex-shrink:0;}
+.m-item-prices{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;min-width:120px;flex-shrink:0;align-self:center;}
+.m-item-price-row{display:flex;justify-content:space-between;gap:1.6rem;font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:.98rem;white-space:nowrap;}
+.m-item-price-row .sz{color:var(--cream-faint);font-size:.78rem;font-style:normal;letter-spacing:.06em;min-width:3.2rem;text-align:right;}
+.m-item.has-sizes{min-height:4.85rem;}
+.m-item.has-sizes .m-item-left{justify-content:center;}
+/* Drink sections with multiple quantities - larger spacing */
+#coffee .m-item,#iced .m-item,#flavoured .m-item,#juices .m-item,#tea .m-item,#softdrinks .m-item,#beer .m-item,#nonalcoholic .m-item,#cocktails .m-item,#spirits .m-item{min-height:6.2rem;align-items:center;}
+#coffee .m-item.has-sizes,#iced .m-item.has-sizes,#flavoured .m-item.has-sizes,#juices .m-item.has-sizes,#tea .m-item.has-sizes,#softdrinks .m-item.has-sizes,#beer .m-item.has-sizes,#nonalcoholic .m-item.has-sizes,#cocktails .m-item.has-sizes,#spirits .m-item.has-sizes{min-height:6.2rem;}
+#coffee .m-item-left,#iced .m-item-left,#flavoured .m-item-left,#juices .m-item-left,#tea .m-item-left,#softdrinks .m-item-left,#beer .m-item-left,#nonalcoholic .m-item-left,#cocktails .m-item-left,#spirits .m-item-left{justify-content:flex-start;}
+#coffee .m-item-price,#iced .m-item-price,#flavoured .m-item-price,#juices .m-item-price,#tea .m-item-price,#softdrinks .m-item-price,#beer .m-item-price,#nonalcoholic .m-item-price,#cocktails .m-item-price,#spirits .m-item-price{align-self:center;}
+#coffee .m-item-prices,#iced .m-item-prices,#flavoured .m-item-prices,#juices .m-item-prices,#tea .m-item-prices,#softdrinks .m-item-prices,#beer .m-item-prices,#nonalcoholic .m-item-prices,#cocktails .m-item-prices,#spirits .m-item-prices{align-self:center;}
+.flavor-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.6rem .9rem;margin:1rem 0 1.8rem;}
+.flavor-tag{display:flex;align-items:center;gap:.7rem;padding:.95rem 0;font-size:1rem;font-weight:400;color:var(--cream);border-bottom:1px solid var(--line-soft);}
+.flavor-tag::before{content:'';width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--gold);opacity:.9;}
+.price-schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
+.price-block{border:1px solid var(--line);padding:1.3rem 1.2rem;text-align:center;transition:border-color .4s ease;}
+.price-block-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:.5rem;}
+.price-block-val{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-soft);}
+.price-block-time{font-size:.78rem;color:var(--cream-dim);margin-top:.2rem;}
+.salad-options{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;margin:.4rem 0 1.8rem;}
+.wine-list{display:flex;flex-direction:column;gap:1.1rem;margin-top:1.2rem;}
+.wine-card{border:1px solid var(--line);padding:1.6rem 1.8rem;display:grid;grid-template-columns:1fr auto;gap:.4rem 2rem;}
+.wine-main{min-width:0;}
+.wine-name{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--cream);margin-bottom:.2rem;line-height:1.3;}
+.wine-region{font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:500;margin-bottom:.4rem;}
+.wine-style{font-size:.88rem;font-style:italic;color:var(--cream-dim);font-weight:300;}
+.wine-prices{display:flex;flex-direction:column;align-items:flex-end;gap:.25rem;min-width:140px;}
+.wine-price-row{display:flex;justify-content:space-between;gap:1.6rem;font-family:var(--serif);font-style:italic;color:var(--gold-soft);font-size:.98rem;white-space:nowrap;}
+.wine-price-row .sz{color:var(--cream-faint);font-size:.78rem;font-style:normal;letter-spacing:.06em;}
+.featured-wine{margin-top:1.5rem;display:grid;grid-template-columns:1.1fr 1fr;gap:0;border:1px solid var(--gold-deep);background:linear-gradient(135deg,rgba(199,160,89,.06),transparent 60%);}
+.featured-wine-body{padding:2.4rem 2.6rem;display:flex;flex-direction:column;justify-content:center;}
+.featured-eyebrow{font-size:.7rem;letter-spacing:.32em;color:var(--gold);text-transform:uppercase;margin-bottom:1rem;}
+.featured-name{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,2.6vw,2.3rem);line-height:1.15;color:var(--cream);margin-bottom:.3rem;}
+.featured-region{font-size:.82rem;letter-spacing:.18em;color:var(--gold-soft);text-transform:uppercase;margin-bottom:1.4rem;}
+.featured-desc{font-size:.94rem;font-style:italic;color:var(--cream-dim);font-weight:300;line-height:1.7;margin-bottom:1.4rem;}
+.featured-notes{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem;font-size:.78rem;letter-spacing:.16em;text-transform:uppercase;color:var(--gold);}
+.featured-notes span::before{content:'•';margin-right:.5rem;color:var(--gold-deep);}
+.featured-notes span:first-child::before{display:none;}
+.featured-prices{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;margin-bottom:1.4rem;}
+.featured-prices .price-block{padding:1rem .8rem;}
+.featured-prices .price-block-label{font-size:.66rem;}
+.featured-prices .price-block-val{font-size:1.15rem;}
+.featured-staff{font-size:.82rem;font-style:italic;color:var(--cream-faint);}
+.featured-wine-art{padding:1.6rem;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 60%,rgba(199,160,89,.12),transparent 70%);}
+.featured-bottle{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--gold-soft);text-align:center;line-height:1.5;border:1px solid var(--gold-deep);padding:2.4rem 1.8rem;max-width:200px;background:var(--espresso);}
+.featured-bottle .bottle-tag{display:block;font-size:.6rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-style:normal;margin-bottom:.8rem;padding-bottom:.8rem;border-bottom:1px solid var(--gold-deep);}
+.featured-bottle .bottle-house{font-size:1.3rem;color:var(--cream);font-style:italic;margin-bottom:.3rem;display:block;}
+.featured-bottle .bottle-varietal{font-size:.95rem;color:var(--cream-dim);font-style:italic;display:block;margin-bottom:.8rem;}
+.featured-bottle .bottle-meta{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-faint);font-style:normal;display:block;line-height:1.7;}
+.menu-rail-mobile{display:none;}

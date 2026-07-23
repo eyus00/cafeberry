@@ -1,0 +1,110 @@
+/* Mobile breakpoint (max-width: 768px) */
+
+@media (max-width:768px){
+html{font-size:15px;}
+.nav{padding:.95rem 1.25rem;grid-template-columns:1fr auto;}
+.nav.scrolled{padding:.55rem 1.25rem;}
+.brand img{height:32px;}
+.nav-links{display:none;}
+.nav-right .language-switcher{padding:.14rem;font-size:.58rem;}
+.nav-right .language-switcher button{min-width:1.85rem;min-height:1.55rem;padding:.22rem .35rem;}
+.nav-right .language-switcher > span{font-size:.5rem;}
+.menu-toggle{display:inline-flex;min-height:38px;align-items:center;font-size:.68rem;padding:.6rem 0 .6rem .8rem;}
+.hero{min-height:100svh;}
+.hero-content{max-width:100%;padding:0 1.25rem;}
+.hero-eyebrow{gap:.6rem;margin-bottom:.7rem;}
+.hero-eyebrow img{width:170px;}
+.hero-eyebrow .tag{font-size:.68rem;letter-spacing:.25em;}
+.hero-title{font-size:clamp(1.85rem,7.5vw,2.7rem);line-height:1.18;margin-bottom:1.6rem;}
+.hero-actions{gap:.65rem;}
+.hero-actions .btn{flex:0 0 auto;min-width:132px;max-width:none;padding:.85rem 1.2rem;font-size:.72rem;letter-spacing:.16em;}
+.hero-scroll{bottom:1.4rem;}
+.ticker-track span{font-size:.92rem;padding:0 1.6rem;}
+.gallery{padding:5rem 0 6rem;}
+.gallery-head{padding:0 1.25rem;margin-bottom:2.2rem;}
+.gallery-head .section-title{font-size:clamp(1.7rem,7vw,2.4rem);}
+.gallery-stage{padding:0 1.25rem;}
+.gallery-arrow{width:42px;height:42px;}
+.gallery-arrow.prev{left:.8rem;}.gallery-arrow.next{right:.8rem;}
+.gallery-arrow svg{width:18px;height:18px;}
+.gallery-dots{margin-top:1.4rem;}
+.interlude{padding:3.8rem 1.25rem;}
+.interlude-mark{font-size:2.6rem;}
+.interlude-quote{font-size:1.05rem;line-height:1.65;}
+.full-menu{padding:5rem 0 4rem;}
+.full-menu-head{padding:0 1.25rem;margin-bottom:2.6rem;}
+.full-menu-head .section-title{font-size:clamp(1.8rem,7vw,2.4rem);}
+.full-menu-head .section-sub{font-size:.92rem;}
+.menu-legend{gap:1.1rem;font-size:.7rem;margin-top:1.2rem;}
+.menu-rail-mobile{top:60px;padding:.8rem 1.25rem;margin:0 0 1.8rem;gap:.4rem;}
+.menu-rail-mobile a{font-size:.7rem;padding:.55rem .95rem;min-height:36px;}
+.menu-layout{padding:0 1.25rem;gap:0;}
+.menu-block{padding-bottom:3rem;margin-bottom:3rem;scroll-margin-top:80px;}
+.menu-block-head{margin-bottom:1.6rem;}
+.menu-cat-num{font-size:.66rem;}
+.menu-cat-title{font-size:clamp(1.35rem,5.5vw,1.8rem);}
+.menu-cat-note{font-size:.85rem;margin-top:.5rem;}
+.menu-subhead{margin:1.4rem 0 .7rem;font-size:.7rem;letter-spacing:.18em;}
+.m-item{padding:.75rem .05rem;gap:.6rem;align-items:flex-start;min-height:4.25rem;}
+.m-item-name{font-size:.95rem;}
+.m-item-desc{font-size:.76rem;}
+.m-item-price{font-size:.95rem;margin-left:.4rem;}
+.m-item-prices{flex-direction:row;flex-wrap:wrap;align-items:center;min-width:0;gap:.6rem 1.4rem;}
+.m-item-price-row{font-size:.92rem;}
+.menu-two-col{grid-template-columns:1fr;gap:0;}
+.bf-grid{gap:1rem;}
+.bf-card{padding:1.6rem 1.3rem;}
+.bf-card h4{font-size:1.1rem;}
+.price-schedule{gap:.7rem;margin-bottom:1.6rem;}
+.price-block{padding:1.1rem .8rem;}
+.price-block-val{font-size:1.15rem;}
+.salad-options{grid-template-columns:1fr;gap:0;margin:.3rem 0 1.2rem;}
+.flavor-row{grid-template-columns:1fr;gap:.38rem;margin:.7rem 0 1.2rem;}
+.flavor-tag{font-size:.76rem;padding:.45rem 0;}
+.wine-card{grid-template-columns:1fr;gap:.6rem;padding:1.2rem 1.3rem;}
+.wine-prices{flex-direction:row;flex-wrap:wrap;align-items:center;min-width:0;gap:.6rem 1.4rem;}
+.wine-price-row{font-size:.92rem;}
+.featured-wine-body{padding:1.8rem 1.4rem;}
+.featured-prices{grid-template-columns:1fr;gap:.5rem;}
+.featured-notes{font-size:.7rem;gap:.6rem;}
+.visit{padding:5rem 1.25rem;}
+.visit .section-title{font-size:clamp(1.7rem,7vw,2.4rem);}
+.visit-intro{font-size:.92rem;}
+.visit-concept-title{font-size:clamp(1.35rem,5vw,1.8rem);margin-bottom:1.8rem;}
+.visit-values{grid-template-columns:repeat(2,1fr);gap:1.4rem;margin-top:0;}
+.visit-value{padding:1.2rem .8rem;}
+.visit-value p{font-size:.9rem;}
+.visit-details{grid-template-columns:1fr;gap:1rem;margin-top:2.2rem;}
+.visit-block{padding:1.8rem 1.2rem;}
+.visit-icon svg{width:22px;height:22px;}
+.visit-block-text{font-size:.92rem;line-height:1.7;}
+.newsletter{padding:3.2rem 1.25rem;}
+.newsletter-title{font-size:1.45rem;}
+.newsletter-text{font-size:.88rem;margin-bottom:1.8rem;}
+.newsletter-form{flex-direction:column;gap:.6rem;max-width:340px;}
+.newsletter-form input{border-right:1px solid var(--line);text-align:center;}
+.newsletter-form button{padding:1rem 1.4rem;font-size:.74rem;}
+.footer{padding:2.5rem 1.25rem 1.5rem;}
+.footer-top{flex-direction:column;gap:2.2rem;padding-bottom:1.8rem;}
+.footer-brand{flex:0 1 auto;width:100%;margin-bottom:.5rem;}
+.footer-brand-logo{height:40px;margin-bottom:.4rem;}
+.footer-brand-tag{font-size:.54rem;letter-spacing:.18em;line-height:1.4;}
+.footer-social{margin-top:1.2rem;gap:.6rem;}
+.footer-social a{width:34px;height:34px;}
+.footer-social svg{width:12px;height:12px;}
+.footer-links-group{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;width:100%;}
+.footer-col{display:flex;flex-direction:column;align-items:center;text-align:center;}
+.footer-col h4{margin-bottom:.8rem;font-size:.64rem;}
+.footer-col ul li{margin-bottom:.4rem;}
+.footer-col ul a{font-size:.88rem;}
+.footer-bottom{flex-direction:column;gap:.6rem;text-align:center;padding-top:1.2rem;border-top:1px solid var(--line-soft);}
+.footer-bottom p{font-size:.7rem;}
+.footer-bottom-links{font-size:.7rem;gap:1rem;}
+.lightbox{padding:16px;}
+.lightbox-close{width:40px;height:40px;top:12px;right:12px;}
+.lightbox-nav{width:42px;height:42px;}
+.lightbox-nav.prev{left:8px;}.lightbox-nav.next{right:8px;}
+.lightbox-counter{bottom:14px;font-size:.66rem;}
+.mobile-nav-links{gap:2.2rem;}
+.mobile-nav-links a{font-size:1.8rem;min-height:48px;display:inline-flex;align-items:center;}
+}

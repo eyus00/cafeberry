@@ -91,7 +91,7 @@
     });
   }
 
-  const languageFadeDuration = 240;
+  const languageFadeDuration = 120;
 
   const wait = (duration) => new Promise((resolve) => setTimeout(resolve, duration));
 

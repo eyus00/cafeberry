@@ -1,0 +1,18 @@
+/* Visit / location section */
+
+.visit{padding:9rem 3.2rem;max-width:1000px;margin:0 auto;text-align:center;}
+.visit-intro{margin-top:1rem;max-width:760px;color:var(--cream-dim);font-weight:300;margin-left:auto;margin-right:auto;}
+.visit-details{margin-top:3.6rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+.visit-block{padding:2.4rem 1.4rem;border:1px solid var(--line);}
+.visit-icon{margin-bottom:1.1rem;color:var(--gold);}
+.visit-icon svg{width:26px;height:26px;}
+.visit-icon svg path,.visit-icon svg circle,.visit-icon svg rect{stroke:currentColor;fill:none;stroke-width:1.4;}
+.visit-block-label{font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
+.visit-block-text{font-size:.98rem;font-weight:300;color:var(--cream-dim);line-height:1.85;font-style:italic;}
+.visit-block-text a{color:inherit;transition:color .3s ease;}
+.visit-block-text a:hover{color:var(--gold);}
+.visit-concept-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--cream);line-height:1.2;margin-bottom:2.4rem;}
+.visit-values{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0;}
+.visit-value{display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:1.6rem 1.4rem;}
+.visit-value-accent{width:2px;height:32px;background:linear-gradient(180deg,var(--gold) 0%,rgba(199,160,89,0) 100%);}
+.visit-value p{font-size:.95rem;color:var(--cream-dim);line-height:1.7;font-weight:300;}

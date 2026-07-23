@@ -1,0 +1,15 @@
+/* Newsletter signup */
+
+.newsletter{padding:5rem 3.2rem;background:var(--espresso-mid);border-bottom:1px solid var(--line-soft);}
+.newsletter-inner{max-width:540px;margin:0 auto;text-align:center;}
+.newsletter-title{font-family:var(--serif);font-size:1.7rem;font-weight:300;margin-bottom:.7rem;}
+.newsletter-title em{font-style:italic;color:var(--gold-soft);}
+.newsletter-text{font-size:.94rem;font-style:italic;color:var(--cream-dim);margin-bottom:2.2rem;font-weight:300;}
+.newsletter-form{display:flex;max-width:420px;margin:0 auto;}
+.newsletter-form input{flex:1;padding:.9rem 1.2rem;background:transparent;border:1px solid var(--line);border-right:none;color:var(--cream);font-family:var(--sans);font-size:.92rem;outline:none;transition:border-color .3s ease;}
+.newsletter-form input::placeholder{color:var(--cream-faint);}
+.newsletter-form input:focus{border-color:var(--gold);}
+.newsletter-form input::placeholder{transition:opacity .3s ease;}
+.newsletter-form input:focus::placeholder{opacity:.5;}
+.newsletter-form button{padding:.9rem 3.2rem;background:var(--gold);border:1px solid var(--gold);color:var(--espresso);font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .4s var(--ease-out);min-width:148px;display:flex;align-items:center;justify-content:center;}
+.newsletter-form button:hover{background:var(--gold-soft);border-color:var(--gold-soft);box-shadow:0 8px 22px -8px rgba(199,160,89,.5);}

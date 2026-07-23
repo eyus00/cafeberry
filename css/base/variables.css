@@ -1,0 +1,25 @@
+/* Design tokens — colors, fonts, easing curves */
+
+:root{
+--espresso:#150F0B;
+--espresso-mid:#1F1712;
+--surface:#2A2019;
+--surface-hi:#352A21;
+--cream:#F7F1E6;
+--cream-dim:rgba(247,241,230,.6);
+--cream-faint:rgba(247,241,230,.36);
+--gold:#C7A059;
+--gold-soft:#E8C98B;
+--gold-deep:#A88546;
+--berry:#AD5468;
+--sage:#93A17E;
+--vanilla:#F0DCB4;
+--pistachio:#A8B683;
+--passion:#D88E9C;
+--line:rgba(247,241,230,.1);
+--line-soft:rgba(247,241,230,.06);
+--serif:'Fraunces',serif;
+--sans:'Plus Jakarta Sans',sans-serif;
+--ease:cubic-bezier(.16,.8,.24,1);
+--ease-out:cubic-bezier(.22,.9,.3,1);
+}
