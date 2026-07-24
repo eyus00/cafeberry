@@ -59,8 +59,8 @@
 .flavor-tag{display:flex;align-items:center;gap:.7rem;padding:.95rem 0;font-size:1rem;font-weight:400;color:var(--cream);border-bottom:1px solid var(--line-soft);}
 .flavor-tag::before{content:'';width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:var(--gold);opacity:.9;}
 .price-schedule{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2rem;}
-.price-block{border:1px solid var(--line);padding:1.3rem 1.2rem;text-align:center;transition:border-color .4s ease;}
-.price-block-label{font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:.5rem;}
+.price-block{border:1px solid var(--line);padding:1.3rem 1.2rem;text-align:center;transition:border-color .4s ease;display:flex;flex-direction:column;}
+.price-block-label{font-size:.72rem;line-height:1.4;letter-spacing:.15em;text-transform:uppercase;color:var(--cream-faint);margin-bottom:.5rem;min-height:calc(1.4em * 2);display:flex;align-items:center;justify-content:center;}
 .price-block-val{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--gold-soft);}
 .price-block-time{font-size:.78rem;color:var(--cream-dim);margin-top:.2rem;}
 .salad-options{display:grid;grid-template-columns:1fr 1fr;gap:0 2rem;margin:.4rem 0 1.8rem;}
