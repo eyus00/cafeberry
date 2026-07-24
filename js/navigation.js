@@ -12,34 +12,23 @@
   onScroll();
 
   const menuToggle = document.getElementById('menuToggle');
-  const floatingMenuToggle = document.getElementById('floatingMenuToggle');
   const mobileOverlay = document.getElementById('mobileOverlay');
   let touchStartX = 0;
   function setMobile(open){
-    if (menuToggle) menuToggle.classList.toggle('active', open);
-    if (floatingMenuToggle) floatingMenuToggle.classList.toggle('active', open);
+    menuToggle.classList.toggle('active', open);
     mobileOverlay.classList.toggle('active', open);
     mobileOverlay.setAttribute('aria-hidden', String(!open));
-    if (menuToggle) menuToggle.setAttribute('aria-expanded', String(open));
-    if (floatingMenuToggle) floatingMenuToggle.setAttribute('aria-expanded', String(open));
+    menuToggle.setAttribute('aria-expanded', String(open));
     document.body.style.overflow = open ? 'hidden' : '';
     if (open) {
       const first = mobileOverlay.querySelector('a');
       if (first) setTimeout(() => first.focus(), 60);
     }
   }
-  if (menuToggle) {
-    menuToggle.addEventListener('click', () => {
-      setMobile(!mobileOverlay.classList.contains('active'));
-      menuToggle.blur();
-    });
-  }
-  if (floatingMenuToggle) {
-    floatingMenuToggle.addEventListener('click', () => {
-      setMobile(!mobileOverlay.classList.contains('active'));
-      floatingMenuToggle.blur();
-    });
-  }
+  menuToggle.addEventListener('click', () => {
+    setMobile(!mobileOverlay.classList.contains('active'));
+    menuToggle.blur();
+  });
   window.closeMobile = () => setMobile(false);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) setMobile(false);

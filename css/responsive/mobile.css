@@ -4,21 +4,12 @@
 html{font-size:15px;}
 .nav{padding:.95rem 1.5rem .95rem 1.25rem;grid-template-columns:1fr auto;}
 .nav.scrolled{padding:.55rem 1.5rem .55rem 1.25rem;}
-.brand img{height:32px;}
+.brand img{height:38px;}
 .nav-links{display:none;}
-.language-switcher{height:32px;padding:.15rem;box-sizing:border-box;}
-.language-switcher button{min-width:1.8rem;min-height:1.6rem;padding:.2rem .35rem;}
-.language-switcher button.active::before{width:1.6rem;height:1.45rem;}
-.menu-toggle{display:none;}
-.floating-menu-toggle{display:inline-flex;position:fixed;bottom:2rem;right:2rem;z-index:1001;width:56px;height:56px;padding:0;border-radius:50%;background:rgba(21,15,11,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(247,241,230,.16);color:var(--cream);cursor:pointer;align-items:center;justify-content:center;transition:background .45s var(--ease-out),border-color .45s var(--ease-out),color .45s var(--ease-out),transform .45s var(--ease-out);font-size:.68rem;}
-.floating-menu-toggle:hover{background:var(--gold);border-color:var(--gold);color:var(--espresso);transform:scale(1.06);}
-.floating-menu-toggle:active{transform:scale(.96);}
-.floating-menu-toggle:focus-visible{outline:1px solid var(--gold);outline-offset:3px;}
-.floating-menu-toggle .hamburger{display:flex;flex-direction:column;gap:3px;width:16px;height:12px;justify-content:center;transition:opacity .3s var(--ease);}
-.floating-menu-toggle .hamburger span{display:block;width:100%;height:1.5px;background:currentColor;border-radius:1px;}
-.floating-menu-toggle.active .hamburger{opacity:0;pointer-events:none;}
-.floating-menu-toggle .close-icon{display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);opacity:0;transition:opacity .3s var(--ease);}
-.floating-menu-toggle.active .close-icon{display:block;opacity:1;}
+.language-switcher{height:38px;padding:.18rem;box-sizing:border-box;}
+.language-switcher button{min-width:2rem;min-height:1.85rem;padding:.25rem .4rem;}
+.language-switcher button.active::before{width:1.8rem;height:1.65rem;}
+.menu-toggle{display:inline-flex;width:38px;height:38px;min-height:38px;align-items:center;justify-content:center;font-size:.68rem;padding:0;}
 .hero{min-height:100svh;}
 .hero-content{max-width:100%;padding:0 1.25rem;}
 .hero-eyebrow{gap:.6rem;margin-bottom:.7rem;}
