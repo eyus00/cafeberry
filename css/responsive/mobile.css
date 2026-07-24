@@ -4,12 +4,12 @@
 html{font-size:15px;}
 .nav{padding:.95rem 1.25rem;grid-template-columns:1fr auto;}
 .nav.scrolled{padding:.55rem 1.25rem;}
-.brand img{height:32px;}
+.brand img{height:42px;}
 .nav-links{display:none;}
-.nav-right .language-switcher{padding:.14rem;font-size:.58rem;}
-.nav-right .language-switcher button{min-width:1.85rem;min-height:1.55rem;padding:.22rem .35rem;}
-.nav-right .language-switcher > span{font-size:.5rem;}
-.menu-toggle{display:inline-flex;min-height:38px;align-items:center;font-size:.68rem;padding:.6rem 0 .6rem .8rem;}
+.language-switcher{height:42px;padding:.2rem;box-sizing:border-box;}
+.language-switcher button{min-width:2.4rem;min-height:2.1rem;padding:.3rem .45rem;}
+.language-switcher button.active::before{width:2.05rem;height:1.85rem;}
+.menu-toggle{display:inline-flex;width:42px;height:42px;min-height:42px;align-items:center;justify-content:center;font-size:.68rem;padding:0;}
 .hero{min-height:100svh;}
 .hero-content{max-width:100%;padding:0 1.25rem;}
 .hero-eyebrow{gap:.6rem;margin-bottom:.7rem;}

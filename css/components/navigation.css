@@ -17,8 +17,9 @@
 .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--gold);transition:width .35s var(--ease);}
 .nav-links a:hover{color:var(--cream);}
 .nav-links a:hover::after{width:100%;}
-.menu-toggle{display:none;cursor:pointer;z-index:1001;padding:.3rem;background:transparent;border:none;color:var(--cream);transition:color .3s var(--ease);position:relative;}
-.menu-toggle:hover{color:var(--gold);}
+.menu-toggle{display:none;cursor:pointer;z-index:1001;width:48px;height:48px;padding:0;border-radius:50%;background:rgba(21,15,11,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(247,241,230,.16);color:var(--cream);transition:background .45s var(--ease-out),border-color .45s var(--ease-out),color .45s var(--ease-out),transform .45s var(--ease-out);position:relative;}
+.menu-toggle:hover{background:var(--gold);border-color:var(--gold);color:var(--espresso);transform:scale(1.06);}
+.menu-toggle:active{transform:scale(.96);}
 .menu-toggle:focus-visible{outline:1px solid var(--gold);outline-offset:3px;}
 .hamburger{display:flex;flex-direction:column;gap:3px;width:18px;height:14px;justify-content:center;transition:opacity .3s var(--ease);}
 .hamburger span{display:block;width:100%;height:1.5px;background:currentColor;border-radius:1px;}
@@ -29,8 +30,6 @@
 .mobile-overlay{display:none;position:fixed;inset:0;background:rgba(21,15,11,.99);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);z-index:999;align-items:center;justify-content:center;flex-direction:column;opacity:0;transition:opacity .3s var(--ease);overscroll-behavior:contain;}
 .mobile-overlay.active{display:flex;opacity:1;}
 .mobile-nav-links{list-style:none;text-align:center;display:flex;flex-direction:column;gap:2.2rem;margin:0;padding:0;}
-.mobile-language-switcher{margin-top:2.5rem;}
-.mobile-language-switcher button.active::before{width:1.55rem;height:1.35rem;}
 .mobile-nav-links a{font-family:var(--serif);font-size:1.8rem;font-weight:400;font-style:italic;color:var(--cream);opacity:0;transform:translateY(20px);transition:all .4s var(--ease);text-decoration:none;}
 .mobile-nav-links a:hover{color:var(--gold);}
 .mobile-overlay.active .mobile-nav-links a{opacity:1;transform:translateY(0);}
