@@ -25,7 +25,10 @@
       if (first) setTimeout(() => first.focus(), 60);
     }
   }
-  menuToggle.addEventListener('click', () => setMobile(!mobileOverlay.classList.contains('active')));
+  menuToggle.addEventListener('click', () => {
+    setMobile(!mobileOverlay.classList.contains('active'));
+    menuToggle.blur();
+  });
   window.closeMobile = () => setMobile(false);
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) setMobile(false);

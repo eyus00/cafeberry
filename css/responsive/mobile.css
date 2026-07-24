@@ -2,14 +2,14 @@
 
 @media (max-width:768px){
 html{font-size:15px;}
-.nav{padding:.95rem 1.25rem;grid-template-columns:1fr auto;}
-.nav.scrolled{padding:.55rem 1.25rem;}
-.brand img{height:42px;}
+.nav{padding:.95rem 1.5rem .95rem 1.25rem;grid-template-columns:1fr auto;}
+.nav.scrolled{padding:.55rem 1.5rem .55rem 1.25rem;}
+.brand img{height:32px;}
 .nav-links{display:none;}
-.language-switcher{height:42px;padding:.2rem;box-sizing:border-box;}
-.language-switcher button{min-width:2.4rem;min-height:2.1rem;padding:.3rem .45rem;}
-.language-switcher button.active::before{width:2.05rem;height:1.85rem;}
-.menu-toggle{display:inline-flex;width:42px;height:42px;min-height:42px;align-items:center;justify-content:center;font-size:.68rem;padding:0;}
+.language-switcher{height:32px;padding:.15rem;box-sizing:border-box;}
+.language-switcher button{min-width:1.8rem;min-height:1.6rem;padding:.2rem .35rem;}
+.language-switcher button.active::before{width:1.6rem;height:1.45rem;}
+.menu-toggle{display:inline-flex;width:33px;height:33px;min-height:33px;align-items:center;justify-content:center;font-size:.68rem;padding:0;}
 .hero{min-height:100svh;}
 .hero-content{max-width:100%;padding:0 1.25rem;}
 .hero-eyebrow{gap:.6rem;margin-bottom:.7rem;}
@@ -86,7 +86,7 @@ html{font-size:15px;}
 .newsletter-form button{padding:1rem 1.4rem;font-size:.74rem;}
 .footer{padding:2.5rem 1.25rem 1.5rem;}
 .footer-top{flex-direction:column;gap:2.2rem;padding-bottom:1.8rem;}
-.footer-brand{flex:0 1 auto;width:100%;margin-bottom:.5rem;}
+.footer-brand{flex:0 1 auto;width:100%;margin:0 auto .5rem;display:flex;flex-direction:column;align-items:center;}
 .footer-brand-logo{height:40px;margin-bottom:.4rem;}
 .footer-brand-tag{font-size:.54rem;letter-spacing:.18em;line-height:1.4;}
 .footer-social{margin-top:1.2rem;gap:.6rem;}
