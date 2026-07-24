@@ -10,7 +10,10 @@
 .visit-block-label{font-size:.7rem;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--gold);margin-bottom:.8rem;}
 .visit-block-text{font-size:.98rem;font-weight:300;color:var(--cream-dim);line-height:1.85;font-style:italic;}
 .visit-block-text a{color:inherit;transition:color .3s ease;}
-.visit-block-text a:hover{color:var(--gold);}
+
+@media (hover:hover) and (pointer:fine){
+  .visit-block-text a:hover{color:var(--gold);}
+}
 .visit-concept-title{font-family:var(--serif);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--cream);line-height:1.2;margin-bottom:2.4rem;}
 .visit-values{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;margin-top:0;}
 .visit-value{display:flex;flex-direction:column;align-items:center;gap:.8rem;padding:1.6rem 1.4rem;}

@@ -12,10 +12,7 @@
 .gallery-slide{position:relative;overflow:hidden;cursor:pointer;aspect-ratio:4/3.6;border-radius:0;background:var(--surface);scroll-snap-align:start;flex-shrink:0;}
 .gallery-slide img{width:100%;height:100%;object-fit:cover;filter:brightness(.82) saturate(.85);transition:filter .6s ease;}
 .gallery-slide::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(21,15,11,.55) 100%);opacity:0;transition:opacity .5s ease;pointer-events:none;}
-.gallery-slide:hover img{filter:brightness(.92) saturate(1);}
-.gallery-slide:hover::after{opacity:1;}
 .gallery-arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(21,15,11,.55);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(247,241,230,.16);color:var(--cream);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:5;transition:background .45s var(--ease-out),border-color .45s var(--ease-out),color .45s var(--ease-out),transform .45s var(--ease-out);}
-.gallery-arrow:hover{background:var(--gold);border-color:var(--gold);color:var(--espresso);transform:translateY(-50%) scale(1.06);}
 .gallery-arrow:active{transform:translateY(-50%) scale(.96);}
 .gallery-arrow.prev{left:1.35rem;}
 .gallery-arrow.next{right:1.35rem;}
@@ -28,5 +25,11 @@
 .gallery-dots button{width:8px;height:8px;border-radius:50%;border:none;background:var(--surface-hi);cursor:pointer;padding:0;transition:background .35s ease,transform .35s ease;position:relative;}
 .gallery-dots button::before{content:'';position:absolute;inset:-10px;border-radius:50%;}
 .gallery-dots button.active{background:var(--gold);transform:scale(1.2);}
-.gallery-dots button:hover:not(.active){background:var(--cream-faint);}
 .gallery-dots button:focus-visible{outline:1px solid var(--gold);outline-offset:3px;}
+
+@media (hover:hover) and (pointer:fine){
+  .gallery-slide:hover img{filter:brightness(.92) saturate(1);}
+  .gallery-slide:hover::after{opacity:1;}
+  .gallery-arrow:hover{background:var(--gold);border-color:var(--gold);color:var(--espresso);transform:translateY(-50%) scale(1.06);}
+  .gallery-dots button:hover:not(.active){background:var(--cream-faint);}
+}

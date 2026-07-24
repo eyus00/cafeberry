@@ -12,4 +12,7 @@
 .newsletter-form input::placeholder{transition:opacity .3s ease;}
 .newsletter-form input:focus::placeholder{opacity:.5;}
 .newsletter-form button{padding:.9rem 3.2rem;background:var(--gold);border:1px solid var(--gold);color:var(--espresso);font-family:var(--sans);font-size:.78rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .4s var(--ease-out);min-width:148px;display:flex;align-items:center;justify-content:center;}
-.newsletter-form button:hover{background:var(--gold-soft);border-color:var(--gold-soft);box-shadow:0 8px 22px -8px rgba(199,160,89,.5);}
+
+@media (hover:hover) and (pointer:fine){
+  .newsletter-form button:hover{background:var(--gold-soft);border-color:var(--gold-soft);box-shadow:0 8px 22px -8px rgba(199,160,89,.5);}
+}

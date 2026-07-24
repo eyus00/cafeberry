@@ -7,7 +7,6 @@
 .footer-brand-tag{font-size:.6rem;font-weight:600;letter-spacing:.24em;color:var(--gold);text-transform:uppercase;line-height:1.5;}
 .footer-social{display:flex;gap:.7rem;margin-top:1.6rem;justify-content:center;}
 .footer-social a{width:36px;height:36px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--cream-dim);transition:all .3s ease;}
-.footer-social a:hover{border-color:var(--gold);color:var(--gold);}
 .footer-social svg{width:14px;height:14px;color:currentColor;}
 .footer-links-group{display:flex;gap:4.5rem;flex:1;justify-content:flex-end;}
 .footer-col{display:flex;flex-direction:column;}
@@ -15,9 +14,13 @@
 .footer-col ul{list-style:none;margin:0;padding:0;}
 .footer-col ul li{margin-bottom:.55rem;}
 .footer-col ul a{font-size:.92rem;font-weight:300;color:var(--cream-dim);font-style:italic;transition:color .3s ease;}
-.footer-col ul a:hover{color:var(--gold);}
 .footer-bottom{max-width:1180px;margin:0 auto;padding-top:1.6rem;display:flex;justify-content:space-between;align-items:center;}
 .footer-bottom p{font-size:.75rem;color:var(--cream-faint);font-weight:300;}
 .footer-bottom-links{display:flex;gap:1.5rem;}
 .footer-bottom-links a{font-size:.75rem;color:var(--cream-faint);transition:color .3s ease;}
-.footer-bottom-links a:hover{color:var(--gold);}
+
+@media (hover:hover) and (pointer:fine){
+  .footer-social a:hover{border-color:var(--gold);color:var(--gold);}
+  .footer-col ul a:hover{color:var(--gold);}
+  .footer-bottom-links a:hover{color:var(--gold);}
+}

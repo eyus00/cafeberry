@@ -13,7 +13,6 @@
 .menu-rail{position:sticky;top:110px;padding-left:1.4rem;border-left:1px solid var(--line);}
 .rail-indicator{position:absolute;left:-1px;top:0;width:1px;height:38px;background:var(--gold);transition:transform .5s var(--ease),height .5s var(--ease);}
 .rail-link{display:block;font-size:.86rem;font-weight:500;color:var(--cream-faint);padding:.5rem 0;transition:color .35s ease,transform .35s ease;}
-.rail-link:hover{color:var(--cream);}
 .rail-link.active{color:var(--gold-soft);transform:translateX(4px);}
 .menu-content{min-width:0;}
 .menu-block{padding-bottom:5rem;margin-bottom:5rem;border-bottom:1px solid var(--line-soft);scroll-margin-top:110px;}
@@ -27,12 +26,9 @@
 .bf-card{border:1px solid var(--line);padding:2rem 1.6rem;transition:all .5s var(--ease-out);position:relative;cursor:pointer;background:transparent;overflow:hidden;}
 .bf-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--surface) 0%,transparent 60%);opacity:0;transition:opacity .5s var(--ease-out);}
 .bf-card > *{position:relative;z-index:1;}
-.bf-card:hover{border-color:rgba(199,160,89,.4);}
-.bf-card:hover::before{opacity:1;}
 .bf-card h4{font-family:var(--serif);font-style:italic;font-size:1.25rem;font-weight:400;margin-bottom:.6rem;color:var(--cream);}
 .bf-card p{font-size:.86rem;color:var(--cream-dim);font-weight:300;margin-bottom:1.2rem;line-height:1.7;}
 .bf-card a{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:600;display:inline-flex;align-items:center;gap:.3rem;transition:gap .35s var(--ease-out);}
-.bf-card:hover a{gap:.6rem;}
 .menu-subhead{font-size:.78rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-soft);margin:2.2rem 0 1rem;}
 .caesar-note{margin-bottom:.6rem;}
 .tea-subhead{margin:0 0 .4rem;font-size:.7rem;}
@@ -98,3 +94,10 @@
 .featured-bottle .bottle-varietal{font-size:.95rem;color:var(--cream-dim);font-style:italic;display:block;margin-bottom:.8rem;}
 .featured-bottle .bottle-meta{font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--cream-faint);font-style:normal;display:block;line-height:1.7;}
 .menu-rail-mobile{display:none;}
+
+@media (hover:hover) and (pointer:fine){
+  .rail-link:hover{color:var(--cream);}
+  .bf-card:hover{border-color:rgba(199,160,89,.4);}
+  .bf-card:hover::before{opacity:1;}
+  .bf-card:hover a{gap:.6rem;}
+}
